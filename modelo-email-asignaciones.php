@@ -1,5 +1,4 @@
-<?php 
-
+<?php  
 $textarea = $_POST['textarea'];
 $id_trabajador = $_POST['id_trabajador'];
 $email = $_POST['email'];
@@ -17,7 +16,7 @@ $email = $_POST['email'];
 
             try {
                  include_once 'funciones/conexion.php';
-                 $stmt = $conn->prepare("UPDATE trabajadores SET ultimo_email_asignaciones = NOW() WHERE id_trabajador = ? ");
+                 $stmt = $conn->prepare("UPDATE trabajadores, asignaciones SET ultimo_email_asignaciones = NOW(), email_enviado = 1 WHERE trabajador_id = ? ");
                  $stmt->bind_param("i", $id_trabajador);
 
                 $estado = $stmt->execute();

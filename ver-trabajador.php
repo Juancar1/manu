@@ -161,12 +161,13 @@ $id_trabajador = $_GET['id'];
                   <th>Sala</th>
                   <th>Fecha</th>
                   <th>Hora</th>
+                  <th>Email enviado</th>
                 </tr>
 
 
                     <?php 
                     try {
-                        $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio, archivado, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_trabajador, nombre, primer_apellido, segundo_apellido ";
+                        $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio, archivado, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_trabajador, nombre, primer_apellido, segundo_apellido, email_enviado ";
                         $sql .= " FROM fiestas ";
                         $sql .= " INNER JOIN asignaciones ";
                         $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id ";
@@ -182,10 +183,11 @@ $id_trabajador = $_GET['id'];
       while ($asignaciones = $resultado->fetch_assoc()) { ?>
 
                 <tr>
-                  <td><?php echo $asignaciones['nombre_evento']  ?></td>
-                  <td><?php echo $asignaciones['nombre_sala']  ?></td>
-                  <td><?php echo $asignaciones['fecha']  ?></td>
-                  <td><?php echo $asignaciones['hora_inicio']  ?></td>
+                  <td> <?php echo $asignaciones['nombre_evento'];  ?></td>
+                  <td><?php echo $asignaciones['nombre_sala'];  ?></td>
+                  <td><?php echo $asignaciones['fecha'];  ?></td>
+                  <td><?php echo $asignaciones['hora_inicio'] ; ?></td>
+                  <td><?php echo $asignaciones['email_enviado'] ; ?></td>
                 </tr>
                  <?php } ?>
               </table>
