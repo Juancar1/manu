@@ -102,7 +102,7 @@ $(document).ready(function () {
     var id_fiesta = $(this).attr('id-fiesta');
     var nombre_trabajador = $(this).attr('nombre-trabajador');
     var puesto = $( "#puesto" ).val();
- 
+    
 
     swal({
       title: 'Estás seguro??',
@@ -164,9 +164,8 @@ $(document).ready(function () {
     var tipo = 'asignaciones'
     var id_fiesta = $('#fiesta_select').val();
     var puesto = $("#puesto_select" ).val();
+    var email_enviado = 0;
 
-    console.log(id_trabajador, tipo, id_fiesta, puesto);
- 
 
     swal({
       title: 'Estás seguro??',
@@ -185,7 +184,8 @@ $(document).ready(function () {
           'id_trabajador': id_trabajador,
           'id_fiesta' : id_fiesta,
           'registro': 'agregar',
-          'puesto' : puesto
+          'puesto' : puesto,
+          'email_enviado' : email_enviado
 
         },
         url: 'modelo-' + tipo + '.php',

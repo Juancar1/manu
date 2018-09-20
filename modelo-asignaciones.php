@@ -5,18 +5,20 @@
 // asignar un puesto al trabajador
 if(isset($_POST['puesto'])){
 
+        
         $id_puesto = $_POST['puesto'];
         $id_fiesta = $_POST['id_fiesta'];
         $id_trabajador = $_POST['id_trabajador'];
-
+        $email_enviado = $_POST['email_enviado'];
         
+
 
 
 try {
 
     include_once 'funciones/conexion.php';
-    $stmt = $conn->prepare("INSERT INTO asignaciones (trabajador_id, fiesta_id, puesto_id, editado) VALUES (?, ?, ?, NOW()) ");
-    $stmt->bind_param("iii", $id_trabajador, $id_fiesta, $id_puesto);
+    $stmt = $conn->prepare("INSERT INTO asignaciones (trabajador_id, fiesta_id, puesto_id, email_enviado, editado) VALUES (?, ?, ?, ?, NOW()) ");
+    $stmt->bind_param("iiii", $id_trabajador, $id_fiesta, $id_puesto, $email_enviado);
     $stmt->execute();
     $id_registro = $stmt->insert_id;
     if($id_registro > 0){
@@ -24,7 +26,6 @@ try {
             'respuesta' => 'exito',
             'id_admin' => $id_registro
         );
-     die(json_encode($respuesta));
     } else {
         $respuesta = array(
             'respuesta' => 'error'
