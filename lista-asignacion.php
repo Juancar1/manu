@@ -65,6 +65,9 @@
                 echo $error;
               }
               while($asignaciones = $resultado->fetch_assoc()){ 
+                      echo "<pre>";
+                        var_dump($asignaciones);
+                      echo "<pre>";
                     setlocale(LC_ALL,"es_ES");
                     $fecha_formateada =  strftime("%A, %d %B %G", strtotime($asignaciones['fecha']));
                     $lista_trabajadores = $asignaciones["GROUP_CONCAT(nombre)"];
