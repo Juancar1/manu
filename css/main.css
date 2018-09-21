@@ -126,6 +126,13 @@ textarea {
     }
   }
   /* ver trabajador */
+.imagen-ficha {
+    display: block;
+    margin: auto;
+  }
+.imagen-banco{
+    margin-left: 35%;
+}
 @media (max-width: 700px) {
     #imprimir,
     #cmd {
