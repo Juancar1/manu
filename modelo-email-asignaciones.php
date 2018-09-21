@@ -16,7 +16,7 @@ $email = $_POST['email'];
 
             try {
                  include_once 'funciones/conexion.php';
-                 $stmt = $conn->prepare("UPDATE trabajadores, asignaciones SET ultimo_email_asignaciones = NOW(), email_enviado = 1 WHERE trabajador_id = ? ");
+                 $stmt = $conn->prepare("UPDATE trabajadores, asignaciones SET ultimo_email_asignaciones = NOW(), email_env = 1 WHERE trabajador_id = ? ");
                  $stmt->bind_param("i", $id_trabajador);
 
                 $estado = $stmt->execute();
