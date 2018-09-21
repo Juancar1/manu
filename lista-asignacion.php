@@ -49,7 +49,7 @@
 
             <?php
             try{
-                $sql = " SELECT id_fiesta, nombre_evento,fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ) , count(id_trabajador), hora_inicio, trabajador_id, nombre, primer_apellido, segundo_apellido, GROUP_CONCAT(nombre) ";
+                $sql = " SELECT id_fiesta, nombre_evento, fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ), count(id_trabajador), GROUP_CONCAT(nombre) ";
                 $sql .= " FROM fiestas ";
                 $sql .= " INNER JOIN asignaciones ";
                 $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id ";
@@ -65,10 +65,6 @@
                 echo $error;
               }
               while($asignaciones = $resultado->fetch_assoc()){ 
-                      echo "<pre>";
-                        var_dump($asignaciones);
-                      echo "<pre>";
-                    setlocale(LC_ALL,"es_ES");
                     $fecha_formateada =  strftime("%A, %d %B %G", strtotime($asignaciones['fecha']));
                     $lista_trabajadores = $asignaciones["GROUP_CONCAT(nombre)"];
                     $lista_trabajadores = str_replace ( ',' , '<br>' , $lista_trabajadores );?>
