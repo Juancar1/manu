@@ -81,12 +81,6 @@
                </tbody>
                 <tfoot>
                 <tr class="tabla_header">
-                <tr class="tabla_header">
-                  <th class="centrar_usuario">Nombre</th>
-                  <th class="trabajadores_obserb">Observaciones</th>
-                  <th class="trabajadores_img">Imagen</th>
-                  <th class="centrar_acciones">Acciones</th>
-                </tr>
                 </tfoot>
               </table>
             </div>

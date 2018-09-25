@@ -13,17 +13,16 @@ if ($_POST['registro'] == 'nuevo') {
         $fecha_evento = $_POST['fecha_evento'];
         //hora
         $hora_evento = $_POST['hora_evento'];
-
         $texto = $_POST['texto'];
         $texto = ucfirst(strtolower($texto));
-        
+        $archivado = 0;
 
 
     try {
 
         include_once 'funciones/conexion.php';
-        $stmt = $conn->prepare("INSERT INTO fiestas (nombre_evento, fecha, hora_inicio, nombre_sala, observaciones, editado) VALUES (?, ?, ?, ?, ?, NOW()) ");
-        $stmt->bind_param("sssss", $nombre_fiesta, $fecha_evento, $hora_evento, $nombre_sala, $texto);
+        $stmt = $conn->prepare("INSERT INTO fiestas (nombre_evento, fecha, hora_inicio, nombre_sala, observaciones, editado, archivado) VALUES (?, ?, ?, ?, ?, NOW(), ? ) ");
+        $stmt->bind_param("sssssi", $nombre_fiesta, $fecha_evento, $hora_evento, $nombre_sala, $texto, $archivado);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
         if($stmt->affected_rows){

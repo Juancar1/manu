@@ -1,9 +1,7 @@
 <?php
 $id_trabajador = $_GET['id'];
 
-// if (!filter_var($id_fiesta, FILTER_VALIDATE_INT)) {
-//   die("Error");
-// }
+
         include_once 'funciones/sesiones.php';
         include_once 'funciones/conexion.php';
         include_once 'templates/header.php';
@@ -17,24 +15,27 @@ $id_trabajador = $_GET['id'];
               <section class="invoice">
                   <div class="row">
                     <div class="col-xs-12">
-                                <?php
-                try {
-                $sql = " SELECT nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones from trabajadores ";
-                $sql .= " WHERE id_trabajador = $id_trabajador ";
 
-                $resultado = $conn->query($sql);
-              } catch (Exception $e) {
-                $error = $e->getMessage();
-                echo $error;
-              }
-              while ($trabajador = $resultado->fetch_assoc()) { ?>
-                    <!-- Content Wrapper. Contains page content -->
-                    <h2 class="page-header">
-                    <i class="far fa-user"></i> <?php echo $trabajador['nombre'] . " / " . $trabajador['primer_apellido'] . " " . $trabajador['segundo_apellido']; ?>
-                    </h2>
-                    </div>
-                    <!-- /.col -->
-                </div>
+
+                                <?php
+                                    try {
+                                    $sql = " SELECT nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones from trabajadores ";
+                                    $sql .= " WHERE id_trabajador = $id_trabajador ";
+
+                                    $resultado = $conn->query($sql);
+                                } catch (Exception $e) {
+                                    $error = $e->getMessage();
+                                    echo $error;
+                                }
+                                while ($trabajador = $resultado->fetch_assoc()) { ?>
+                                        <!-- Content Wrapper. Contains page content -->
+                                        <h2 class="page-header">
+                                        <i class="far fa-user"></i> <?php echo $trabajador['nombre'] . " / " . $trabajador['primer_apellido'] . " " . $trabajador['segundo_apellido']; ?>
+                                        </h2>
+                    </div><!-- col-xs-12 -->             
+                </div><!-- row -->
+
+
                 <div class="row">
                     <div class="col-xs-12 table-responsive">
                     <table class="table table-striped">
@@ -48,7 +49,7 @@ $id_trabajador = $_GET['id'];
                             </tr>
                         </thead>
                         <br>
-                <!-- Table row -->
+               
                         <div> <img src="img/trabajadores/<?php echo $trabajador['url_foto']; ?>" width="150px"></div>
                         <br> 
                         <?php 
@@ -68,45 +69,43 @@ $id_trabajador = $_GET['id'];
                             </tr>
                         </tbody>
                     </table>
+                  </div><!-- table responsive -->
+                </div><!-- row -->
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                    <p class="lead">Foto DNI</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                        <tr class="col-xs-6">
+                            <th style="width:50%">Cara A</th>
+                            <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_1']; ?>" width="150px"></td>
+                        </tr>
+                        <tr class="col-xs-6">
+                            <th style="width:50%">Cara B</th>
+                            <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>" width="150px"></td>
+                        </tr>
+                        </table>
                     </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-      <div class="row">
-        <!-- accepted payments column -->
-        <!-- /.col -->
-        <div class="col-xs-12">
-          <p class="lead">Foto DNI</p>
-          <div class="table-responsive">
-            <table class="table">
-              <tr class="col-xs-6">
-                <th style="width:50%">Cara A</th>
-                <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_1']; ?>" width="150px"></td>
-              </tr>
-              <tr class="col-xs-6">
-                <th style="width:50%">Cara B</th>
-                <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>" width="150px"></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="col-xs-12">
-            <div class="table-responsive">
-                <table>
-                    <tr>
-                        <td> <p class="lead">Observaciones</p><?php echo $trabajador['observaciones'];  ?></td>
-                    </tr>
-                    <tr>
-                        <th>Ultima actualización <?php echo $trabajador['editado']; ?></th>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <!-- /.col -->
-      </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table>
+                                <tr>
+                                    <td> <p class="lead">Observaciones</p><?php echo $trabajador['observaciones'];  ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Ultima actualización <?php echo $trabajador['editado']; ?></th>
+                                </tr>
+                            </table>
+                        </div><!-- table responsive -->
+                    </div><!-- rcol-xs-12 -->
+                </div><!-- row -->
       <br>
-      <!-- /.row -->
-      <!-- this row will not appear when printing -->
+  
+
+
       <div class="row no-print">
         <div class="col-xs-12">
         <a href="ver-trabajador.php?id=<?php echo $id_trabajador ?>"  class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
@@ -114,10 +113,10 @@ $id_trabajador = $_GET['id'];
       </div>
     </section>
     <?php } ?>
-    <!-- /.content -->
+
     <div class="clearfix"></div>
   </div>
-  <!-- Control Sidebar -->
+
   <div class="control-sidebar-bg"></div>
 </div>
 <div id="editor"></div>

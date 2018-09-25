@@ -63,8 +63,7 @@ $id_fiesta = $_GET['id'];
                                 <th>Tlf</th>
                                 <th>Puesto</th>
                                 <th>Email</th>
-                                <th>Enviado</th>
-                                <th>Confirmado</th>
+                                <th>Email enviado</th>
                             </tr>
                         </thead>
 
@@ -73,7 +72,7 @@ $id_fiesta = $_GET['id'];
 
                     <?php
               try {
-                $sql = " SELECT id_trabajador, hora_fichado, nombre, primer_apellido, segundo_apellido, dni, banco, ss, tlf, email, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_puestos, nombre_puesto, email_confirmado, email_env ";
+                $sql = " SELECT id_trabajador, hora_fichado, nombre, primer_apellido, segundo_apellido, dni, banco, ss, tlf, email, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_puestos, nombre_puesto, email_env ";
                 $sql .= " FROM trabajadores ";
                 $sql .= " INNER JOIN asignaciones ";
                 $sql .= " ON asignaciones.trabajador_id=trabajadores.id_trabajador ";
@@ -90,18 +89,11 @@ $id_fiesta = $_GET['id'];
 
               while ($datosFiestas = $resultado->fetch_assoc()) { 
 
-                    if($datosFiestas['email_confirmado'] == 0){
-                        $email_confirmacion = "Sin confirmar";
-                    } else {
-                        $email_confirmacion =  "<i class='fas fa-thumbs-up'></i>";
-                    }
-
                     if($datosFiestas['email_env'] == 0){
-                        $email_enviado = "Sin enviar";
+                        $email_enviado = "No";
                     } else {
-                        $email_enviado = "<i class='fas fa-check'></i>";
+                        $email_enviado = "Si";
                     }
-
                     ?>
                 <!-- Table row -->
                 
@@ -113,23 +105,11 @@ $id_fiesta = $_GET['id'];
                                 <td><?php echo $datosFiestas['nombre_puesto'] ?></td>
                                 <td><?php echo $datosFiestas['email'] ?></td>
                                 <td><?php echo $email_enviado; ?></td>
-                                <td><?php echo $email_confirmacion; ?></td>
                             </tr>
                            
                         </tbody>
 
                          <?php } ?>
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>     
-                                <th>Tlf</th>
-                                <th>Puesto</th>
-                                <th>Email</th>
-                                <th>Enviado</th>
-                                <th>Confirmado</th>
-                            </tr>
-                        </thead>
                        
                     </table>
                     </div>

@@ -49,7 +49,7 @@
 
             <?php
             try{
-                $sql = " SELECT id_fiesta, nombre_evento,fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ) , count(id_trabajador), hora_inicio, archivado, trabajador_id, nombre, primer_apellido, segundo_apellido, GROUP_CONCAT(nombre) ";
+                $sql = " SELECT id_fiesta, nombre_evento, hora_inicio, fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ), count(id_trabajador), GROUP_CONCAT(nombre) ";
                 $sql .= " FROM fiestas ";
                 $sql .= " INNER JOIN asignaciones ";
                 $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id ";
@@ -77,7 +77,7 @@
                   <?php echo $lista_trabajadores. "<br>"; ?>
                 </td>
                   <td class="centrar_acciones">
-                  <a href="ver-fiestas-fichar.php?id=<?php echo $asignaciones['id_fiesta'] ?>" class="btn bg-green btn-flat margin">
+                  <a href="ver-fiestas.php?id=<?php echo $asignaciones['id_fiesta'] ?>" class="btn bg-green btn-flat margin">
                      <i class="far fa-eye"></i>
                   </a>
                   </td>

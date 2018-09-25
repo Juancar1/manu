@@ -22,6 +22,7 @@
    $imagen_url1 = $dni . "_1.jpg";
    $imagen_url2 = $dni . "_2.jpg";
    $imagen_url3 = $dni . "_3.jpg";
+   $imagen_url4 = $dni . "_4.jpg";
   
 
 
@@ -57,13 +58,21 @@
             'respuesta' => error_get_last()
         );
     }
+    // foto banco
+    if(move_uploaded_file($_FILES['archivo_imagen4']['tmp_name'], $directorio . $dni . "_4.jpg")){
+        $imagen_resultado4 = "Se subió correctamente";
+    } else {
+        $repuesta = array(
+            'respuesta' => error_get_last()
+        );
+    }
 
  
      try {
         include_once 'funciones/conexion.php';
         
-            $stmt = $conn->prepare('UPDATE trabajadores SET nombre = ?, primer_apellido = ?, segundo_apellido = ?, dni = ?, banco = ?, ss = ?, tlf = ?, email = ?, editado = NOW(), observaciones = ? WHERE id_trabajador = ? ');
-            $stmt->bind_param('sssssssssi', $nombre, $primer_apellido, $segundo_apellido, $dni, $banco, $ss, $telefono, $email, $observaciones, $id_registro);
+            $stmt = $conn->prepare('UPDATE trabajadores SET nombre = ?, primer_apellido = ?, segundo_apellido = ?, dni = ?, banco = ?, ss = ?, tlf = ?, email = ?, editado = NOW(), observaciones = ?, url_banco = ? WHERE id_trabajador = ? ');
+            $stmt->bind_param('ssssssssssi', $nombre, $primer_apellido, $segundo_apellido, $dni, $banco, $ss, $telefono, $email, $observaciones, $imagen_url4, $id_registro);
         
             $estado = $stmt->execute();
          

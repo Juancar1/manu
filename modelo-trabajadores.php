@@ -60,6 +60,7 @@ if ($_POST['registro_trabajador'] == 'nuevo') {
    $imagen_url1 = $dni . "_1.jpg";
    $imagen_url2 = $dni . "_2.jpg";
    $imagen_url3 = $dni . "_3.jpg";
+   $imagen_url4 = $dni . "_4.jpg";
 
     //imagenes
    $directorio = "img/trabajadores/";
@@ -95,13 +96,22 @@ if ($_POST['registro_trabajador'] == 'nuevo') {
             'respuesta' => error_get_last()
         );
     }
+    // foto banco
+    if(move_uploaded_file($_FILES['archivo_imagen4']['tmp_name'], $directorio . $dni . "_4.jpg")){
+        $imagen_url4 = $dni .  "_4.jpg";
+        $imagen_resultado3 = "Se subió correctamente";
+    } else {
+        $repuesta = array(
+            'respuesta' => error_get_last()
+        );
+    }
 
 
 
     try {
         include_once 'funciones/conexion.php';
-        $stmt = $conn->prepare('INSERT INTO trabajadores (nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?) ');
-        $stmt->bind_param('ssssssssssss', $nombre, $primer_apellido, $segundo_apellido, $dni, $imagen_url1, $imagen_url2, $banco, $ss, $telefono, $email, $imagen_url3, $observaciones);
+        $stmt = $conn->prepare('INSERT INTO trabajadores (nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones, url_banco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?, ?) ');
+        $stmt->bind_param('sssssssssssss', $nombre, $primer_apellido, $segundo_apellido, $dni, $imagen_url1, $imagen_url2, $banco, $ss, $telefono, $email, $imagen_url3, $observaciones, $imagen_url4);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
         if ($stmt->affected_rows) {

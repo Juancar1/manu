@@ -156,7 +156,7 @@ $(document).ready(function () {
 
   
 
-
+  // asignacion de puesto a un trabajador
   $('.asignar_trabajador_select').on('click', function (e) {
     e.preventDefault();
 
@@ -199,8 +199,9 @@ $(document).ready(function () {
                 'Trabajador agregado.',
                 'success'
               )
-             // jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
-             location.reload(true);
+              setTimeout(function () {
+                window.location.href = 'lista-asignacion.php';
+              }, 2000)
             }
           } else {
             swal(

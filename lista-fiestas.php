@@ -73,22 +73,12 @@
                <?php }; ?>
 
                </tbody>
-                <tfoot>
-                <tr class="tabla_header">
-                <tr class="tabla_header">
-                <tr class="tabla_header">
-                  <th class="centrar_usuario">Nombre Fiesta</th>
-                  <th class="nombre_sala">Nombre Sala</th>
-                  <th class="fiestas_observaciones">Observaciones</th>
-                  <th class="centrar_acciones">Fecha/Hora</th>
-                  <th class="centrar_acciones">Borrar</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
           <a href="index.php"  class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
+          <a href="crear-fiestas.php"  class="btn btn-success"><i class="fas fa-plus"></i> Crear fiesta</a>
           <!-- /.box -->
         </div>
         <!-- /.col -->
