@@ -76,12 +76,12 @@ include_once 'templates/navegacion.php';
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="ss">Número Seguridad Social: </label>
-                                    <input type="text" class="form-control" id="ss" name="ss" placeholder="12" value="<?php echo $trabajador['ss'] ?>"maxlength="12" minlength="12"/> 
+                                    <input type="text" class="form-control" id="ss" name="ss" placeholder="" value="<?php echo $trabajador['ss'] ?>"maxlength="12" minlength="12"/> 
                                     <p class="help-block">Introduce los 12 números sin espacios</p>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="banco">Número cuenta bancaria: </label>
-                                    <input type="text" class="form-control" id="banco" name="banco" placeholder="24" value="<?php echo $trabajador['banco'] ?>" placeholder="ES123456789..." maxlength="24" minlength="24">
+                                    <input type="text" class="form-control" id="banco" name="banco" placeholder="ES123456789..." value="<?php echo $trabajador['banco'] ?>" placeholder="ES123456789..." maxlength="24" minlength="24">
                                     <p class="help-block">Introduce los 24 carácteres sin espacios</p>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -109,9 +109,9 @@ include_once 'templates/navegacion.php';
                                     <img src="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>" width="200">
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="url_dni_1">Imagen Banco:</label>
-                                    <input class="form-control" type="file" id="url_dni_1" name="archivo_imagen3">
-                                    <p class="help-block">Añade captura del banco</p>
+                                    <label for="url_banco">Imagen Banco:</label>
+                                    <input class="form-control" type="file" id="url_banco" name="archivo_imagen4">
+                                    <p class="help-block">Añade foto del banco</p>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="url_dni_1">Imagen DNI Cara A:</label>

@@ -49,7 +49,7 @@
 
             <?php
             try{
-                $sql = " SELECT id_fiesta, nombre_evento, fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ), count(id_trabajador), GROUP_CONCAT(nombre) ";
+                $sql = " SELECT id_fiesta, nombre_evento, hora_inicio, fiesta_id, fecha, DATE_FORMAT(fecha, '%M %D, %Y' ), count(id_trabajador), GROUP_CONCAT(nombre) ";
                 $sql .= " FROM fiestas ";
                 $sql .= " INNER JOIN asignaciones ";
                 $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id ";
@@ -64,7 +64,8 @@
                 $error = $e->getMessage();
                 echo $error;
               }
-              while($asignaciones = $resultado->fetch_assoc()){ 
+              while($asignaciones = $resultado->fetch_assoc()){
+                    setlocale(LC_ALL,"es_ES"); 
                     $fecha_formateada =  strftime("%A, %d %B %G", strtotime($asignaciones['fecha']));
                     $lista_trabajadores = $asignaciones["GROUP_CONCAT(nombre)"];
                     $lista_trabajadores = str_replace ( ',' , '<br>' , $lista_trabajadores );?>
@@ -95,13 +96,6 @@
                   
          
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Fiesta</th>
-                  <th>Informacion</th>
-                  <th class="centrar_acciones">Acciones</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -196,7 +190,6 @@
           </div><!-- class row -->
           <br><br><br><br><br>
          <a href="index.php"  class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
-         <button href="#" type="button" class="btn btn-link">Ver fiestas antiguas</button>
           <!-- /.box -->
         </div>
         <!-- /.col -->

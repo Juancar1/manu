@@ -74,19 +74,24 @@ include_once 'templates/navegacion.php';
                           <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email">
                           <small id="emailHelp" class="form-text text-muted"></small>
                       </div>
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                           <label for="dni">DNI: </label>
                           <input type="text" class="form-control" id="dni" name="dni" placeholder="ej: 12345678M" maxlength="9" minlength="9" required>
                       </div>
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                         <label for="url_dni_1">Imagen:</label>
                         <input class="form-control" type="file" id="url_dni_1" name="archivo_imagen1">
                         <p class="help-block">Añade foto del DNI cara A</p>
                       </div>
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                           <label for="url_dni_2">Imagen:</label>
                           <input class="form-control" type="file" id="url_dni_2" name="archivo_imagen2">
                           <p class="help-block">Añade foto del DNI cara B</p>
+                      </div>
+                      <div class="form-group col-md-3">
+                          <label for="url_banco">Imagen:</label>
+                          <input class="form-control" type="file" id="url_dni_4" name="archivo_imagen4">
+                          <p class="help-block">Añade foto banco</p>
                       </div>
                       
                      
@@ -108,10 +113,10 @@ include_once 'templates/navegacion.php';
           </form>
 
          </div> <!-- box -->
-          </section>
-           </div><!-- col 8-->
-      </div><!-- row-->
-    </div><!-- /.content-wrapper -->
+       </section>
+    </div><!-- col 8-->
+   </div><!-- row-->
+</div><!-- /.content-wrapper -->
   
 
 

@@ -53,7 +53,7 @@ include_once 'templates/navegacion.php';
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="date" class="form-control" id="fecha" class="fecha" name="fecha_evento" step="2" value="" required>
+                        <input type="date" class="form-control" id="fecha" class="fecha" name="fecha_evento" step="1" value="" required>
                         </div>
                       </div>
                         <div class="bootstrap-timepicker">

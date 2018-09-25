@@ -43,8 +43,10 @@ $(document).ready(function () {
                          var resultado = JSON.parse(data);
                          if (resultado.respuesta == 'archivado') {
                           
-                            $('.ul-navegador').prepend('<li class="dropdown user user-menu"><a href="#" class="dropdown-toggle enlace" data-toggle="dropdown"><p class="parpadea text">Fiesta abierta</p></a>');
-                            
+                           // $('.ul-navegador').prepend('<li class="dropdown user user-menu"><a href="fiesta-fichar.php" class="dropdown-toggle enlace" data-toggle="dropdown"><p class="parpadea text">Fiesta abierta</p></a></li>');
+                           
+                           location.reload(true);
+                         
                          }
                       } 
                       
@@ -94,6 +96,9 @@ $(document).ready(function () {
                           'Esta fiesta ha quedado registrada.',
                           'success'
                         )
+                        setTimeout(function () {
+                          window.location.href = 'fiesta-fichar.php';
+                        }, 2000)
                       }
                     } else {
                       swal(

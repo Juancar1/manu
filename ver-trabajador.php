@@ -190,14 +190,23 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                             echo $error;
                                         }
 
-                                          while ($asignaciones = $resultado->fetch_assoc()) { ?>
-
+                                          while ($asignaciones = $resultado->fetch_assoc()) { 
+                                              $fiesta_id = $asignaciones['fiesta_id'];
+                                              setlocale(LC_ALL,"es_ES");
+                                              $fecha_email =  strftime("%A, %d %B %G", strtotime($asignaciones['ultimo_email_asignaciones']));
+                                            
+                                              if(($asignaciones['email_env']) == 0) {
+                                                  $email_env = "No"; 
+                                              } else {
+                                                  $email_env = "Si";
+                                              }
+                                            ?>
                                     <tr>
                                     <td> <?php echo $asignaciones['nombre_evento'];  ?></td>
                                     <td><?php echo $asignaciones['nombre_sala'];  ?></td>
                                     <td><?php echo $asignaciones['fecha'];  ?></td>
                                     <td><?php echo $asignaciones['hora_inicio'] ; ?></td>
-                                    <td><?php echo $asignaciones['email_env'] ; ?></td>
+                                    <td><?php echo $email_env ; ?></td>
                                     </tr>
                                     <?php } ?>
                                 </table>
@@ -207,21 +216,21 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                 <br><br><br>
                 <!-- acciones -->
                                 <div class="col-xs-12">
-                                    <button id="" type="button" class="btn btn-info pull-right" style="margin-right: 5px;">
-                                            <a href="mail-asignaciones.php?id=<?php echo $id_trabajador ?>"><i class="fa fa-download"></i> Enviar email</a>
-                                    </button>
+                                    
                                     <?php
-                                            if ($asignaciones['ultimo_email_asignaciones'] == 0){
+                                            if (!isset($fiesta_id)){
                                                 echo "No hay fiestas asignadas";
-                                            } else {
+                                            } else {?>
+                                            <button id="" type="button" class="btn btn-info pull-right" style="margin-right: 5px;">
+                                            <a href="mail-asignaciones.php?id=<?php echo $id_trabajador ?>"><i class="fa fa-download"></i> Enviar email</a>
+                                            </button>
 
-                                        setlocale(LC_ALL,"es_ES");
-                                        $fecha_formateada3 =  strftime("%A, %d %B %G", strtotime($asignaciones['ultimo_email_asignaciones']));?>
-                                            <div>Ulimo email enviado "Fiestas"<br><small><?php echo $fecha_formateada3; ?></small></div>
+                                            <div>Ulimo email enviado "Fiestas"<br><small><?php echo $fecha_email; ?></small></div>
 
                                     <?php } ?>
 
                                 </div><!-- col-cs-12-->
+                                
                              </div><!--box body -->
                         </div><!-- lista asignaciones -->
                 </div><!-- col-md-11-->
@@ -263,14 +272,19 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
                                                 while ($asignaciones = $resultado->fetch_assoc()) { 
                                                 setlocale(LC_ALL,"es_ES");
-                                                $fecha_formateada =  strftime("%H:%M", strtotime($datosFiestas['hora_fichado']));?>      
-                                                <tr>
+                                                $fecha_formateada =  strftime("%H:%M", strtotime($datosFiestas['hora_fichado']));
+                                                if (!isset($asignaciones['fiesta_id'])){
+                                                    echo "no constan";
+                                                } else { ?>
+                                                    <tr>
                                                 <td> <?php echo $asignaciones['nombre_evento'];  ?></td>
                                                 <td><?php echo $asignaciones['nombre_sala'];  ?></td>
                                                 <td><?php echo $asignaciones['fecha'];  ?></td>
                                                 <td><?php echo $asignaciones['hora_inicio'] ; ?></td>
                                                 <td><?php echo $fecha_formateada ; ?></td>
                                                 </tr>
+                                                  <?php  }?>      
+                                               
                                                 <?php } ?>
                                 </table>
                         </div><!-- box body -->

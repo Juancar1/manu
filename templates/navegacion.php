@@ -63,10 +63,6 @@
           </a>
         </li>
         <li>
-          <a href="correo.php"><i class="far fa-envelope-open"></i> <span>Correo</span>
-          </a>
-        </li>
-        <li>
           <a href="ajustes.php"><i class="fas fa-sliders-h"></i> <span>Ajustes</span>
           </a>
         </li>
