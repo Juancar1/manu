@@ -1,8 +1,7 @@
  
 
  
-  <!-- =============================================== -->
-
+ 
   <!-- Left side column. contains the sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -14,6 +13,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menú de navegación</li>
+        <?php if(($_SESSION['acceso_administrador']) == 1):?>
         <li class="treeview">
           <a href="#">
           <i class="fas fa-bars"></i> <span>Trabajadores</span>
@@ -26,6 +26,8 @@
             <li><a href="crear-trabajadores.php"><i class="fas fa-user-plus"></i> Añadir</a></li>
           </ul>
         </li>
+        <?php
+         ?>
         <li class="treeview">
           <a href="#">
           <i class="fas fa-beer"></i> <span>Fiestas</span>
@@ -66,6 +68,7 @@
           <a href="ajustes.php"><i class="fas fa-sliders-h"></i> <span>Ajustes</span>
           </a>
         </li>
+        <?php endif; ?>
         <li>
           <a href="login.php?cerrar_sesion=true"><i class="fas fa-external-link-square-alt"></i> <span>Salir</span>
           </a>

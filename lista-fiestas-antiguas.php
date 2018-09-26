@@ -5,7 +5,7 @@
       include_once 'templates/header.php';
       include_once 'templates/barra.php';
       include_once 'templates/navegacion.php';
-
+      if(($_SESSION['acceso_administrador']) == 1):?>
 
  $sql = " SET GLOBAL group_concat_max_len=10500 ";
 ?>
@@ -57,7 +57,7 @@
                 $sql .= " ON asignaciones.trabajador_id=trabajadores.id_trabajador ";
                 $sql .= " WHERE archivado = 3 ";
                 $sql .= " GROUP BY id_fiesta ";
-                $sql .= " ORDER BY fecha DESC ";
+                $sql .= " ORDER BY fecha, hora_inicio ASC ";
                 
 
 
@@ -72,8 +72,8 @@
                     $lista_trabajadores = $asignaciones["GROUP_CONCAT(nombre)"];
                     $lista_trabajadores = str_replace ( ',' , '<br>' , $lista_trabajadores );?>
                 <tr>
-                  <td><?php echo $asignaciones['nombre_evento'] . "<br> " . $fecha_formateada . "<br> " . $asignaciones['hora_inicio']; ?></td>
-                  <td>Trabajadores totales <?php echo $asignaciones['count(id_trabajador)']  ?><br>
+                <td id="<?php echo $asignaciones['id_fiesta'] ?>"><p class="datos_fiesta"><?php echo $asignaciones['nombre_evento'] . "<br> " . $fecha_formateada . "<br>" . " " . $asignaciones['hora_inicio'] ?></p>
+                  <td><p class="lista_trabajadores">Trabajadores totales <?php echo $asignaciones['count(id_trabajador)'] ?></p> 
                   <?php echo $lista_trabajadores. "<br>"; ?>
                 </td>
                   <td class="centrar_acciones">
@@ -84,17 +84,7 @@
                 </tr>
 
                   <?php }; ?>
-
-                  
-         
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Fiesta</th>
-                  <th>Informacion</th>
-                  <th class="centrar_acciones">Acciones</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -117,7 +107,8 @@
   <!-- /.content-wrapper -->
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 

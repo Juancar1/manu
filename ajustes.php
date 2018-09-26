@@ -4,7 +4,7 @@
           include_once 'templates/header.php';
           include_once 'templates/barra.php';
           include_once 'templates/navegacion.php';
-          
+          if(($_SESSION['acceso_administrador']) == 1):?>
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -12,8 +12,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Página principal
-        <small>it all starts here</small>
+        Ajustes
+        <small></small>
       </h1>
       
     </section>
@@ -24,9 +24,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Ajustes</h3>
+        <a href="editar-admin.php">Cambiar contraseña</a>
         </div>
-            <a href="editar-admin.php">Cambiar contraseña</a>
         </div>
         <!-- /.box-footer-->
       </div>
@@ -40,7 +39,8 @@
   <!-- /.content-wrapper -->
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php';
+endif;?>
 
 
 

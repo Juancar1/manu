@@ -4,6 +4,7 @@ include_once 'funciones/conexion.php';
 include_once 'templates/header.php';
 include_once 'templates/barra.php';
 include_once 'templates/navegacion.php';
+if(($_SESSION['acceso_administrador']) == 1):?>
 
 ?>
 
@@ -44,12 +45,7 @@ include_once 'templates/navegacion.php';
                       </div>
                       <div class="form-group">
                           <label for="password">Password: </label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                          <label for="password">Repetir Password: </label>
-                          <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Password">
-                          <span id="resultado_password" class="help-block"></span>
+                          <input type="text" class="form-control" id="password" name="password" placeholder="Password">
                       </div>
               </div>
 
@@ -71,7 +67,8 @@ include_once 'templates/navegacion.php';
   <!-- /.content-wrapper -->
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 

@@ -237,6 +237,12 @@ textarea {
       margin-left:0%;
     }
   }
+.lista_trabajadores{
+    background: #5dcbe2;
+}
+.datos_fiesta{
+    font-weight: 600;
+}
 /* Crear fiesta */
 .fecha{
     width: 100px;

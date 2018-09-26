@@ -2,14 +2,13 @@
 
 $id_fiesta = $_GET['id'];
 
-// if (!filter_var($id_fiesta, FILTER_VALIDATE_INT)) {
-//   die("Error");
-// }
+
         include_once 'funciones/sesiones.php';
         include_once 'funciones/conexion.php';
         include_once 'templates/header.php';
         include_once 'templates/barra.php';
         include_once 'templates/navegacion.php';
+        if(($_SESSION['acceso_administrador']) == 1):?>
 ?>
 
 <div id="content">
@@ -112,20 +111,6 @@ $id_fiesta = $_GET['id'];
                         </tbody>
 
                          <?php } ?>
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>DNI</th>
-                                <th>Banco</th>
-                                <th>SS</th>
-                                <th>Tlf</th>
-                                <th>Puesto</th>
-                                <th>Email</th>
-                                <th>Email</th>
-                            </tr>
-                        </thead>
-                       
                     </table>
                     </div>
                     <!-- /.col -->
@@ -152,7 +137,8 @@ $id_fiesta = $_GET['id'];
 <script>
 
 </script>
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 
