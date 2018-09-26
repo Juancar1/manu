@@ -1,5 +1,7 @@
 <?php
 
+
+//verifica el usuario y contraseña
 if (isset($_POST['login-admin'])) {
 
     $usuario = $_POST['usuario'];
@@ -21,6 +23,7 @@ if (isset($_POST['login-admin'])) {
                     session_start();
                     $_SESSION['usuario'] = $usuario_admin;
                     $_SESSION['id'] = $id_admin;
+                    $_SESSION['acceso_administrador'] = $acceso_administrador;
 
                     $respuesta = array(
                         'respuesta' => 'exitoso',

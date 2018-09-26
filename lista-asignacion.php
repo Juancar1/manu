@@ -5,7 +5,7 @@
       include_once 'templates/header.php';
       include_once 'templates/barra.php';
       include_once 'templates/navegacion.php';
-
+      if(($_SESSION['acceso_administrador']) == 1):?>
 
  $sql = " SET GLOBAL group_concat_max_len=10500 ";
 ?>
@@ -70,12 +70,12 @@
                     $lista_trabajadores = $asignaciones["GROUP_CONCAT(nombre)"];
                     $lista_trabajadores = str_replace ( ',' , '<br>' , $lista_trabajadores );?>
                 <tr>
-                  <td id="<?php echo $asignaciones['id_fiesta'] ?>"><?php echo $asignaciones['nombre_evento'] . "<br> " . $fecha_formateada . "<br>" . " " . $asignaciones['hora_inicio'] ?>
+                  <td id="<?php echo $asignaciones['id_fiesta'] ?>"><p class="datos_fiesta"><?php echo $asignaciones['nombre_evento'] . "<br> " . $fecha_formateada . "<br>" . " " . $asignaciones['hora_inicio'] ?></p>
                   <div id="cuenta-atras"></div>
                   <input type="hidden" id="fecha" value="<?php echo $asignaciones['fecha']; ?>"><br>
                   <input type="hidden" value="<?php echo $asignaciones['hora_inicio'] ?>" class="reloj" id="hora">
                 </td>
-                  <td>Trabajadores totales <?php echo $asignaciones['count(id_trabajador)']  ?><br>
+                  <td><p class="lista_trabajadores">Trabajadores totales <?php echo $asignaciones['count(id_trabajador)'] ?></p> 
                   <?php echo $lista_trabajadores. "<br>"; ?>
                 </td>
                   <td class="centrar_acciones">
@@ -202,7 +202,8 @@
   <!-- /.content-wrapper -->
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 

@@ -18,7 +18,7 @@
       </h1>
       
     </section>
-
+   <?php if(($_SESSION['acceso_administrador']) == 1):?>
     <!-- Main content -->
     <section class="content">
 
@@ -185,26 +185,17 @@
               <p>Puestos</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+            <i class="fas fa-diagnoses"></i>
             </div>
             <a href="crear-puesto.php" class="small-box-footer">Más info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
       </div>
-         
 
-        
-        
-
-
-        
-        <!-- /.box-footer-->
-      
-      <!-- /.box -->
 
     </section>
-
+ <?php  endif; ?>
     
     <!-- /.content -->
   </div>

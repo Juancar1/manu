@@ -9,7 +9,8 @@ $id_trabajador = $_GET['id'];
       include_once 'templates/header.php';
       include_once 'templates/barra.php';
       include_once 'templates/navegacion.php';
-?>
+      if(($_SESSION['acceso_administrador']) == 1):?>
+
 
 
 
@@ -120,4 +121,5 @@ $id_trabajador = $_GET['id'];
 
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>

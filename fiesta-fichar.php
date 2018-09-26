@@ -9,7 +9,7 @@ include_once 'funciones/conexion.php';
 include_once 'templates/header.php';
 include_once 'templates/barra.php';
 include_once 'templates/navegacion.php';
-
+if(($_SESSION['acceso_administrador']) == 1):?>
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -159,11 +159,6 @@ include_once 'templates/navegacion.php';
           </div><!--col-md-6-->
 
 
-              
-             
-             
-
-
 
                
             <!-- /.box-header -->
@@ -229,7 +224,8 @@ include_once 'templates/navegacion.php';
     </section>
   </div><!-- col 12-->
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 

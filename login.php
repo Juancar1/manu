@@ -17,7 +17,7 @@
 
 <div class="login-box">
         <div class="login-logo">
-          <a href="index.php"><b>Hola Manu</b></a>
+          <a href="index.php"><b>Hola</b></a>
         </div>
 
 

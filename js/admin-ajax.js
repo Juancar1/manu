@@ -243,7 +243,7 @@ $(document).ready(function () {
         data: {
           'id_asignaciones': id
         },
-        url: 'modelo-asignaciones.php',
+        url: 'modelo-asignaciones-fichar.php',
         success: function (data) {
           console.log(data);
           var resultado = JSON.parse(data);
@@ -318,7 +318,6 @@ $(document).ready(function () {
                 'Trabajador agregado.',
                 'success'
               )
-             location.reload(true);
             }
           } else {
             swal(
@@ -364,7 +363,6 @@ $(document).ready(function () {
               'usuario' : usuario,
               'acceso' : acceso,
               'registro': 'modificar'
-    
             },
             url: 'modelo-' + tipo + '.php',
             success: function (data) {
@@ -377,6 +375,9 @@ $(document).ready(function () {
                     'Has cambiado el estado.',
                     'success'
                   )
+                  setTimeout(function () {
+                    window.location.href = 'lista-admin.php';
+                  }, 500)
                   if(resultado.acceso == '1'){
                     $("#acceso_administrador").val("Con acceso");
                   } else {

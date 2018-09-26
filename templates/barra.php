@@ -11,16 +11,18 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Manu </b>García</span>
     </a>
+    
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
+      
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav ul-navegador">
-
+        <?php if(($_SESSION['acceso_administrador']) == 1):?>
           <?php
               try {
                 $sql = " SELECT id_fiesta, nombre_sala, nombre_evento, fecha, hora_inicio, archivado, observaciones ";
@@ -116,14 +118,20 @@
                         $sql = "SELECT COUNT(id_notas) AS notas FROM notas ";
                         $resultado = $conn->query($sql);
                         $notas = $resultado->fetch_assoc();
+                        if($notas['notas'] == 0){
+                          $aviso = "";
+                          $mensaje = 0;
+                        } else {
+                          $aviso = $notas['notas'];
+                        }
                         ?>
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="far fa-edit"></i>
-              <span class="label label-danger"><?php echo $notas['notas']; ?></span>
+              <span class="label label-danger"><?php echo $aviso; ?></span>
             </a>
             <ul class="dropdown-menu">
-              <li class="header">Tienes <?php echo $notas['notas']; ?> notas</li>
+              <li class="header">Tienes <?php echo $mensaje; ?> notas</li>
               <li>
                 <!-- Inner menu: contains the tasks -->
                 <ul class="menu">
@@ -137,5 +145,6 @@
           </li>
         </ul>
       </div>
+      <?php endif; ?>
     </nav>
   </header>

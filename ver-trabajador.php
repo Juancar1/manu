@@ -9,6 +9,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
         include_once 'templates/header.php';
         include_once 'templates/barra.php';
         include_once 'templates/navegacion.php';
+        if(($_SESSION['acceso_administrador']) == 1):?>
 ?>
     
           <div id="content">
@@ -298,7 +299,8 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 <div id="editor"></div>
 
 
-<?php include_once 'templates/footer.php'; ?>
+<?php include_once 'templates/footer.php'; 
+endif;?>
 
 
 

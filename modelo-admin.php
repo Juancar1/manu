@@ -1,6 +1,6 @@
 <?php 
 
-
+//crea un nuevo usuario y contraseña
 if ($_POST['registro'] == 'nuevo') {
 
  
@@ -44,7 +44,7 @@ if ($_POST['registro'] == 'nuevo') {
 }
 
 
-
+// elimina usuario y contraseña
 if ($_POST['registro'] == 'eliminar') {
 
     
