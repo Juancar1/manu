@@ -25,10 +25,12 @@ $(document).ready(function () {
       })
 
 
-
-      
+      //coger el valor del select del trabajador para crear usuario
+      // $('.crear_registro_admin').on('submit', function (e) {
+      //   e.preventDefault();
+      //   console.log("click");
     
-  
+      // });
 
   
 
