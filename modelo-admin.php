@@ -7,6 +7,8 @@ if ($_POST['registro'] == 'nuevo') {
     $usuario = $_POST['nombre'];
     $password = $_POST['password'];
     $acceso_administrador = 0;
+
+    
     $opciones = array(
         'cost' => 12
     );

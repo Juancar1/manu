@@ -33,7 +33,7 @@
                 <thead>
                 <tr class="tabla_header">
                   <th class="centrar_usuario">Usuario</th>
-                  <th class="acceso_trabajador">Acceso trabajador</th>
+                  <th class="acceso_trabajador">Trabajador</th>
                   <th class="centrar_usuario">Acceso Administrador</th>
                   <th class="centrar_acciones">Eliminar</th>
                 </tr>
@@ -43,7 +43,12 @@
                   <?php
 
                   try {
-                    $sql = "SELECT id_admin, usuario, acceso_administrador, password FROM admins WHERE id_admin > 1 ";
+                    $sql = " SELECT id_admin, usuario, id_trabajador, nombre, primer_apellido, segundo_apellido ";
+                    $sql .= " from admins ";
+                    $sql .= " inner join trabajadores ";
+                    $sql .= " on admins.trabajador_id=trabajadores.id_trabajador ";
+                    $sql .= " WHERE id_admin > 1 ";
+                    $sql .= " ORDER BY usuario ASC ";
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
                     $error = $e->getMessage();
@@ -61,8 +66,8 @@
                     <tr id="<?php echo $admin['id_admin'] ?>">
                         <td><?php echo $admin['usuario']; ?></td>
                         <td class="acceso_trabajador">
-                            </div>
                             <p class="code_activo"><code>Activo</code></p>
+                            <p><?php echo $admin['nombre']. " " . $admin['primer_apellido'] . " " . $admin['segundo_apellido']; ?></p>
                         </td>
                         <td class="centrar_acciones">
                             <p id="acceso_administrador" name="acceso_administrador"> <code><?php echo $acceso_admin; ?></code></p>
