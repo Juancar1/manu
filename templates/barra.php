@@ -11,7 +11,6 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Manu </b>García</span>
     </a>
-    
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
@@ -123,6 +122,7 @@
                           $mensaje = 0;
                         } else {
                           $aviso = $notas['notas'];
+                          $mensaje = $notas['notas'];
                         }
                         ?>
             <!-- Menu Toggle Button -->

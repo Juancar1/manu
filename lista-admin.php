@@ -43,7 +43,7 @@
                   <?php
 
                   try {
-                    $sql = " SELECT id_admin, usuario, id_trabajador, nombre, primer_apellido, segundo_apellido ";
+                    $sql = " SELECT id_admin, usuario, id_trabajador, nombre, primer_apellido, segundo_apellido, acceso_administrador ";
                     $sql .= " from admins ";
                     $sql .= " inner join trabajadores ";
                     $sql .= " on admins.trabajador_id=trabajadores.id_trabajador ";

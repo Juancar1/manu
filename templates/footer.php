@@ -8,8 +8,8 @@
 
 <!-- jQuery 3 -->
 <script src="js/jquery.min.js"></script>
-<script src="js/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
+<script src="js/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script src="js/jquery-ui.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -62,13 +62,13 @@
 <!-- CK Editor -->
 <script src="js/main.js"></script>
 <script>
+
+  
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
 
   $(".compose-textarea").wysihtml5();
-
-
 
 </script>
 </body>

@@ -23,6 +23,7 @@ $(document).ready(function () {
           $(this).text(event.strftime('%M:%S'));
         }
      })
+     
         // contador a cero, registro en base de datos y mensaje
         .on('finish.countdown', function (event) {
             $(this).text('Empieza la fiesta');
@@ -43,8 +44,7 @@ $(document).ready(function () {
                          var resultado = JSON.parse(data);
                          if (resultado.respuesta == 'archivado') {
                           
-                           // $('.ul-navegador').prepend('<li class="dropdown user user-menu"><a href="fiesta-fichar.php" class="dropdown-toggle enlace" data-toggle="dropdown"><p class="parpadea text">Fiesta abierta</p></a></li>');
-                           
+
                            location.reload(true);
                          
                          }

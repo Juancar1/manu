@@ -91,7 +91,63 @@ $(document).ready(function () {
 
   });
 
- 
+
+  //crear usuario, contraseña y asignarlo a trabajador
+  $('#crear_registro_admin').on('click', function (e) {
+    e.preventDefault();
+    
+    var trabajador =  $('#trabajador_select_usuario').val();
+    var nombre = $('#nombre_admin').val();
+    var password = $('#password_admin').val();
+
+
+    swal({
+      title: 'Estás seguro??',
+      text: "Vas crear un usuario y contraseña",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Agregar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+      $.ajax({
+        type: 'post',
+        data: {
+          'id_trabajador': trabajador,
+          'registro' : "nuevo",
+          'nombre': nombre,
+          'password': password
+
+        },
+        url: 'modelo-admin.php',
+        success: function (data) {
+          console.log(data);
+          var resultado = JSON.parse(data);
+          if (resultado.respuesta == 'exito') {
+            if (result.value) {
+              swal(
+                'Agregado!',
+                'Trabajador agregado.',
+                'success'
+              )
+            }
+          } else {
+            swal(
+              'Error',
+              'Motivos del error -Usuario ya existe -Trabajador, usuario o trabajador no seleccionado -Trabajador ya tiene usuario asignado anteriormente ',
+              'error'
+            )
+          }
+
+        }
+
+      })
+    }
+    })
+
+  });
 
 
   $('.asignar_trabajador').on('click', function (e) {
