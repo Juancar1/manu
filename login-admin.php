@@ -3,7 +3,7 @@
 
 //verifica el usuario y contraseña
 if (isset($_POST['login-admin'])) {
-
+  
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
   
@@ -11,10 +11,10 @@ if (isset($_POST['login-admin'])) {
     try {
 
         include_once 'funciones/conexion.php';
-        $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ?; ");
+        $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ? ");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
-        $stmt->bind_result($id_admin, $usuario_admin, $password_admin, $acceso_administrador);
+        $stmt->bind_result($id_admin, $usuario_admin, $password_admin, $acceso_administrador, $trabajador_id);
         if ($stmt->affected_rows) {
             $existe = $stmt->fetch();
             if ($existe) {
@@ -24,6 +24,7 @@ if (isset($_POST['login-admin'])) {
                     $_SESSION['usuario'] = $usuario_admin;
                     $_SESSION['id'] = $id_admin;
                     $_SESSION['acceso_administrador'] = $acceso_administrador;
+                    $_SESSION['trabajador_id'] = $trabajador_id;
 
                     $respuesta = array(
                         'respuesta' => 'exitoso',

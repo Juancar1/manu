@@ -2,11 +2,13 @@
 
 //crea un nuevo usuario y contraseña
 if ($_POST['registro'] == 'nuevo') {
-
  
     $usuario = $_POST['nombre'];
     $password = $_POST['password'];
     $acceso_administrador = 0;
+    $id_trabajador = $_POST['id_trabajador'];
+    
+    
     $opciones = array(
         'cost' => 12
     );
@@ -17,8 +19,8 @@ if ($_POST['registro'] == 'nuevo') {
     try {
 
         include_once 'funciones/conexion.php';
-        $stmt = $conn->prepare("INSERT INTO admins (usuario, password, acceso_administrador) VALUES (?, ?, ?) ");
-        $stmt->bind_param("ssi", $usuario, $password_hashed, $acceso_administrador);
+        $stmt = $conn->prepare("INSERT INTO admins (usuario, password, acceso_administrador, trabajador_id) VALUES (?, ?, ?, ?) ");
+        $stmt->bind_param("ssii", $usuario, $password_hashed, $acceso_administrador, $id_trabajador);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
         if ($id_registro > 0) {

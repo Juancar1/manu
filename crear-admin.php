@@ -37,16 +37,39 @@ if(($_SESSION['acceso_administrador']) == 1):?>
        
         <!-- /.box-body -->
        
-        <form role="form" method="post" name="guardar-registro" id="guardar-registro" action="modelo-admin.php">
+       
               <div class="box-body">
                       <div class="form-group">
                           <label for="nombre">Usuario: </label>
-                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Usuario">
+                          <input type="text" class="form-control" id="nombre_admin" name="" placeholder="Usuario" required>
                       </div>
                       <div class="form-group">
                           <label for="password">Password: </label>
-                          <input type="text" class="form-control" id="password" name="password" placeholder="Password">
-                      </div>
+                          <input type="text" class="form-control" id="password_admin" name="" placeholder="Password" required>
+                      </div><br>
+
+                      
+                      <div>
+                      <label>Selecciona al trabajador</label>
+                      <select id='trabajador_select_usuario' class="form-control fiesta">
+                              <option value="0" >- Selecciona -</option>
+                                    <?php  
+                                    try{
+                                        $sql = "SELECT * FROM trabajadores ORDER BY nombre ASC ";
+                                        $resultado = $conn->query($sql);
+                                        while($trabajador = $resultado->fetch_assoc()) { ?>
+                                            <option value="<?php echo $trabajador['id_trabajador'] ?>">
+                                        <?php echo $trabajador['nombre'] . "   " . $trabajador['primer_apellido'] . " " . $trabajador['segundo_apellido']?></option>
+                                        
+                                        <?php } 
+
+                                    } catch (Exception $e){
+                                        echo "Error: " . $e->getMessage();
+                                    }
+                                    ?>
+                                   
+                          </select>
+                        </div> <br>
               </div>
 
          <!-- /.box-body -->
@@ -55,7 +78,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                     <input type="hidden" name="registro" value="nuevo">
                     <button type="submit" class="btn btn-primary" id="crear_registro_admin">Añadir</button>
               </div>
-          </form>
+         
           </div>
     
 
