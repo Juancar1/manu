@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
 
+  
 
 
   $("#fecha_evento").datepicker($.datepicker.regional["es"]);

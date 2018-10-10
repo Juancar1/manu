@@ -22,7 +22,7 @@ $id_fiesta = $_GET['id'];
 
 
                 try {
-                $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio from fiestas ";
+                $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio, observaciones_final from fiestas ";
                 $sql .= " WHERE id_fiesta = $id_fiesta ";
 
                 $resultado = $conn->query($sql);
@@ -34,8 +34,8 @@ $id_fiesta = $_GET['id'];
               while ($fiestas = $resultado->fetch_assoc()) { 
                   
                     setlocale(LC_ALL,"es_ES");
-                    $fecha_formateada =  strftime("%A, %d %B %G", strtotime($fiestas['fecha']));?>
-
+                    $fecha_formateada =  strftime("%A, %d %B %G", strtotime($fiestas['fecha']));
+                     $observaciones_final = $fiestas['observaciones_final'];?>
          
                     <!-- Content Wrapper. Contains page content -->
        
@@ -120,7 +120,9 @@ $id_fiesta = $_GET['id'];
                                 <th>Email</th>
                             </tr>
                         </thead>
-                       
+                        <tr>
+                             <td><strong>Observaciones Cierre de fiesta: </strong><br><?php echo $observaciones_final?></td>
+                         </tr>
                     </table>
                     </div>
                     <!-- /.col -->

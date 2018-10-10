@@ -20,7 +20,7 @@ $(document).ready(function () {
           var minutos = event.strftime('%M');
 
           if ((dias == 0) && (horas < 5)){
-          $(this).text(event.strftime('%M:%S'));
+          $(this).text(event.strftime('%H:%M:%S'));
         }
      })
      
