@@ -45,7 +45,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
 
                         <div class="row">
-                            <div class="col-xs-12 table-responsive">
+                            <div class="col-xs-12 table-responsive centrar-fotos">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
@@ -59,7 +59,9 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                     <br>
                                   
                                     <div> 
-                                        <img  class="imagen-ficha" src="img/trabajadores/<?php echo $trabajador['url_foto']; ?>" width="150px">
+                                        <a data-lightbox="image-1" href="img/trabajadores/<?php echo $trabajador['url_foto']; ?>">
+                                        <img src="img/trabajadores/<?php echo $trabajador['url_foto']; ?>" width="150px">
+                                        </a>
                                     </div>
                                     <br>
                                         <?php
@@ -73,7 +75,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                         ?>
                                     <tbody>
                                          <tr>
-                                                <td><?php echo $trabajador['email'] ;  ?></td>
+                                                <td><?php echo $trabajador['email'] ;  ?></td>    
                                                 <td><?php echo $trabajador['dni'] ?></td>
                                                 <?php if(isset($banco)) { ?>
                                                 <td><?php echo hiddenString($banco,0,5); ?></td>
@@ -89,15 +91,17 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                             
                             <div class="col-md-6 table-responsive">
                                 <p class="lead">Foto DNI</p>
-                                <div class="table-responsive">
+                                <div class="table-responsive centrar-fotos">
                                     <table class="table">
                                         <tr class="col-xs-6">
-                                            <th style="width:50%"></th>
-                                            <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_1']; ?>" width="150px"></td>
+                                            <a data-lightbox="image-2" href="img/trabajadores/<?php echo $trabajador['url_dni_1']; ?>">
+                                            <img src="img/trabajadores/<?php echo $trabajador['url_dni_1']; ?>" width="150px">
+                                            </a>
                                         </tr>
                                         <tr class="col-xs-6">
-                                            <th style="width:50%"></th>
-                                            <td><img src="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>" width="150px"></td>
+                                            <a data-lightbox="image-3" href="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>">
+                                            <img src="img/trabajadores/<?php echo $trabajador['url_dni_2']; ?>" width="150px">
+                                            </a>
                                         </tr>
                                     </table>
                                 </div>
@@ -106,11 +110,12 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
                             <div class="col-md-6 table-responsive">
                                 <p class="lead">Foto Banco</p>
-                                    <div class="table-responsive">
+                                    <div class="table-responsive centrar-fotos">
                                         <table class="table">
                                         <tr class="col-xs-6">
-                                            <th style="width:50%"></th>
-                                            <td><img class="imagen-banco" src="img/trabajadores/<?php echo $trabajador['url_banco']; ?>" width="150px"></td>
+                                            <a data-lightbox="image-3" href="img/trabajadores/<?php echo $trabajador['url_banco']; ?>">
+                                            <img src="img/trabajadores/<?php echo $trabajador['url_banco']; ?>" width="150px">
+                                            </a>
                                         </tr>
                                         </table>
                                     </div>

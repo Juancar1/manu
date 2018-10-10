@@ -1,8 +1,11 @@
 
 
-
-    
-
+ <footer id="main-footer" class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1.0
+    </div>
+    <strong>Diseñado por <a href="https://websitestory.com.es">Web Sites Story</a></strong>  2018
+  </footer>
 </div>
 
 
@@ -14,7 +17,8 @@
 <script src="js/jquery-ui.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="js/bootstrap.min.js"></script>
-
+<!-- lightbox -->
+<script src="js/lightbox.min.js"></script>
 <!-- calendario -->
 <!-- login 3.3.7 -->
 <script src="js/login-ajax.js"></script>
@@ -30,8 +34,6 @@
 <script src="js/adminlte.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/sweetalert2.all.min.js"></script> 
-<!-- app.js -->
-<script src="js/app.js"></script> 
 <!-- Countdown -->
 <script src="js/jquery.countdown.min.js"></script>
 <!-- Login ajax -->
@@ -48,6 +50,8 @@
 <script src="js/icheck.min.js"></script>
 <!-- Login ajax -->
 <script src="js/nota-ajax.js"></script>
+<!-- app.js -->
+<script src="js/app.js"></script> 
 <!-- Ajax trabajadores -->
 <script src="js/trabajadores.js"></script>
 <!-- CK Editor -->
@@ -70,6 +74,10 @@
 
   $(".compose-textarea").wysihtml5();
 
+  // $(document).ready(function () {
+  // $('.foto-perfil').colorbox({inline:true, width: "50%"});
+  // })
 </script>
+
 </body>
 </html>

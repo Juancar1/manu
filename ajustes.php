@@ -17,7 +17,7 @@
       </h1>
       
     </section>
-
+    
     <!-- Main content -->
     <section class="content">
 
@@ -25,6 +25,9 @@
       <div class="box">
         <div class="box-header with-border">
         <a href="editar-admin.php">Cambiar contraseña</a>
+        </div>
+        <div class="box-header with-border">
+        <a href="#">Última versión</a>
         </div>
         </div>
         <!-- /.box-footer-->

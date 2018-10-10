@@ -7,12 +7,15 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <!-- lightbox -->
+  <link href="css/lightbox.min.css" rel="stylesheet">
   <!-- Ionicons -->
   <!-- Fons Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/ionicons.min.css">
+  
   <!-- Sweet alert -->
   <link rel="stylesheet" href="css/sweetalert2.min.css">
   <!-- bootstrap datepicker
@@ -27,7 +30,7 @@
   <link rel="stylesheet" href="css/main.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="css/AdminLTE.min.css">
-  
+
   <link rel="stylesheet" href="css/jquery-ui.css">
     <!-- iCheck -->
   <link rel="stylesheet" href="css/blue.css">
