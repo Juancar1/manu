@@ -101,6 +101,19 @@ textarea {
 .tabla_header{
     text-align: center; 
 }
+.imagen_1{
+    margin-top: 35px;
+}
+.icono_user{
+    margin-bottom: 17px;
+}
+.lista_trabajador{
+    list-style:none;
+    margin-left: -44px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+}
 .centrar_tabla{
     text-align: center;
 }
@@ -315,6 +328,15 @@ textarea {
 }
 .centrar-aviso{
     text-align: center;
+}
+/* versiones */
+.texto_versiones{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+table > tbody > tr > td.segundo_rango{
+    padding-left: 30px;
 }
 /* footer  */
 #main-footer{

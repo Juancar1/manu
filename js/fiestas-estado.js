@@ -1,63 +1,65 @@
 $(document).ready(function () {
 
 
-    // CUENTA REGRESIVA
-    $(function () {
 
-        var diasEvento = $('#fecha').val();
-        var horaEvento = $('#hora').val();
+     $(function () {
+
+        var diasEvento = $('#fecha_activa').val();
+        var horaEvento = $('#hora_activa').val();
+        
         fechaHoraEvento = diasEvento + " " + horaEvento;
 
        
 
-        $('#cuenta-atras').countdown(fechaHoraEvento)
+        $('#cuenta-atras-activa').countdown(fechaHoraEvento)
 
         // 5 horas antes, el contador se ve
         .on('update.countdown', function (event) {
 
-          var dias = event.strftime('%D');
-          var horas = event.strftime('%H');
-          var minutos = event.strftime('%M');
+          // var dias = event.strftime('%D');
+          // var horas = event.strftime('%H');
+          // var minutos = event.strftime('%M');
 
-          if ((dias == 0) && (horas < 5)){
-          $(this).text(event.strftime('%H:%M:%S'));
-        }
+          // if ((dias == 0) && (horas < 5)){
+          // $('#cuenta-atras-activa').text(event.strftime('%H:%M:%S'));
+      //  }
      })
-     
-        // contador a cero, registro en base de datos y mensaje
-        .on('finish.countdown', function (event) {
-            $(this).text('Empieza la fiesta');
 
-                    td = $('#cuenta-atras').parent();
-                    id = td[0].getAttribute('id');
-      
-      
-                     $.ajax({
-                       type: 'post',
-                       data: {
-                         'id_fiesta': id,
-                         'archivado' : 2 
-                       },
-                       url: 'modelo-fiesta-activa.php',
-                       success: function (data) {
-                         console.log(data);
-                         var resultado = JSON.parse(data);
-                         if (resultado.respuesta == 'archivado') {
-                          
 
-                           location.reload(true);
-                         
-                         }
-                      } 
-                      
-              
-                 })
+        //contador a cero, registro en base de datos y mensaje
+
+    .on('finish.countdown', function (event) {
+            
   
+                   
+                    var id = $('#id_activa').val();
         
-         })
+        
+                       $.ajax({
+                         type: 'post',
+                         data: {
+                           'id_fiesta': id,
+                           'archivado' : 2 
+                         },
+                         url: 'modelo-fiesta-activa.php',
+                         success: function (data) {
+                           console.log(data);
+                           var resultado = JSON.parse(data);
+                           if (resultado.respuesta == 'archivado') {
+                            
+  
+                             location.reload(true);
+                           
+                           }
+                        } 
+                        
+                
+                   })
+    
+          
+           })
 
-
-    });
+     });
 
 
     // cerrar fiesta

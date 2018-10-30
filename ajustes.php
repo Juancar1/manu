@@ -27,7 +27,10 @@
         <a href="editar-admin.php">Cambiar contraseña</a>
         </div>
         <div class="box-header with-border">
-        <a href="#">Última versión</a>
+        <a href="funcionalidades.php">Funcionalidades</a>
+        </div>
+        <div class="box-header with-border">
+        <a href="ultimaversion.php">Última versión</a>
         </div>
         </div>
         <!-- /.box-footer-->

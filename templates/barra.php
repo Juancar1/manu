@@ -1,4 +1,4 @@
-<?php include_once 'funciones/conexion.php'; ?>
+<?php include_once 'funciones/conexion.php';?>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -18,6 +18,29 @@
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
+            <?php 
+                  try{
+                    $sql = " SELECT id_fiesta, hora_inicio, fecha ";
+                    $sql .= " FROM fiestas ";
+                    $sql .= " WHERE archivado = 0 ";
+                    $sql .= " GROUP BY id_fiesta ";
+                    $sql .= " ORDER BY fecha, hora_inicio ASC ";
+
+                    $resultado = $conn->query($sql);
+                }catch (Exception $e){
+                    $error = $e->getMessage();
+                    echo $error;
+                  }
+                  while($fiesta_activa = $resultado->fetch_assoc()){?>
+                    
+                    <input type="hidden" id="fecha_activa" value="<?php echo $fiesta_activa['fecha']; ?>">
+                    <input type="hidden" id="hora_activa" value="<?php echo $fiesta_activa['hora_inicio'] ?>">
+                    <input type="hidden" id="id_activa" value="<?php echo $fiesta_activa['id_fiesta'] ?>">
+                    <div id="cuenta-atras-activa"></div>
+                    <?php
+                    
+                  }
+              ?>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav ul-navegador">
@@ -27,6 +50,7 @@
                 $sql = " SELECT id_fiesta, nombre_sala, nombre_evento, fecha, hora_inicio, archivado, observaciones ";
                 $sql .= " FROM fiestas ";
                 $sql .= " WHERE archivado = 2 limit 1 ";
+              
 
                 $resultado = $conn->query($sql);
               } catch (Exception $e) {

@@ -1,8 +1,7 @@
-<!doctype html>
-<html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Page Not Found</title>
+    <title>Página no encontrada</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
@@ -53,8 +52,9 @@
     </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+    <h1>Página no encontrada</h1>
+    <p>Revisa bien la dirección</p>
+    <a href="">Inicio</a>
 </body>
 </html>
 <!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

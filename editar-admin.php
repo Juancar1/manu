@@ -61,11 +61,6 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                           <label for="password">Password: </label>
                           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                       </div>
-                      <div class="form-group">
-                          <label for="password">Repetir Password: </label>
-                          <input type="password" class="form-control" id="repetir_password" name="repetir_password" placeholder="Password">
-                          <span id="resultado_password" class="help-block"></span>
-                      </div>
               </div>
 
          <!-- /.box-body -->

@@ -71,7 +71,6 @@
                     $lista_trabajadores = str_replace ( ',' , '<br>' , $lista_trabajadores );?>
                 <tr>
                   <td id="<?php echo $asignaciones['id_fiesta'] ?>"><p class="datos_fiesta"><?php echo $asignaciones['nombre_evento'] . "<br> " . $fecha_formateada . "<br>" . " " . $asignaciones['hora_inicio'] ?></p>
-                  <div id="cuenta-atras"></div>
                   <input type="hidden" id="fecha" value="<?php echo $asignaciones['fecha']; ?>"><br>
                   <input type="hidden" value="<?php echo $asignaciones['hora_inicio'] ?>" class="reloj" id="hora">
                 </td>
