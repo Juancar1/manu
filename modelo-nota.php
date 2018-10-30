@@ -2,7 +2,7 @@
 
 if ($_POST['registro'] == 'nuevo') {
 
-    $texto = $_POST['texto'];
+    $texto = htmlspecialchars($_POST['texto']);
     $texto = ucfirst(strtolower($texto));
     $fecha= date("Y-m-d H:i:s");
     try {
@@ -38,6 +38,7 @@ if ($_POST['registro'] == 'eliminar') {
 
    
     $id_borrar = $_POST['id'];
+    $id_borrar = filter_var($id_borrar, FILTER_VALIDATE_INT);
 
     try{
         include_once 'funciones/conexion.php';

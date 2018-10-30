@@ -37,8 +37,8 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                     <h2 class="page-header">
                                     <i class="far fa-user icono_user"></i><br> 
                                     <strong>Nombre: </strong><?php echo $trabajador['nombre']; ?><br>
-                                    <strong>Primer Apellido: </strong><?php echo $trabajador['primer_apellido']; ?><br>
-                                    <strong>Segundo Apellido: </strong><?php echo $trabajador['segundo_apellido']; ?>
+                                    <strong>1º Apellido: </strong><?php echo $trabajador['primer_apellido']; ?><br>
+                                    <strong>2º Apellido: </strong><?php echo $trabajador['segundo_apellido']; ?>
                                     </h2>
 
 
