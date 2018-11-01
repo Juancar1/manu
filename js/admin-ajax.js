@@ -406,10 +406,12 @@ $(document).ready(function () {
           if (resultado.respuesta == 'exito') {
             if (result.value) {
               swal(
-                'Agregado!',
-                'Trabajador agregado.',
+                'Borrado!',
+                'Trabajador borrado de esta fiesta',
                 'success'
               )
+              // esta linea no funciona, 
+               jQuery('[data-id="' + resultado.id_trabajador + '"]').parents('tr').remove();
             }
           } else {
             swal(

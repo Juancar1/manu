@@ -2,7 +2,7 @@
 
 if(isset($_POST['id_asignaciones'])){
                     
-                    $id_asignaciones = $_POST['id_asignaciones'];
+                    $id_asignaciones = filter_var($_POST['id_asignaciones'], FILTER_VALIDATE_INT);
                     $fichado = 1;
 
                     try {

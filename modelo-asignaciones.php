@@ -8,8 +8,8 @@ if(isset($_POST['puesto'])){
 
   
        
-        $id_fiesta = $_POST['id_fiesta'];
-        $id_trabajador = $_POST['id_trabajador'];
+        $id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
+        $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
       
                     include_once 'funciones/conexion.php';
                     $sql = "SELECT COUNT(id_asignaciones) AS asignacion FROM asignaciones where fiesta_id = $id_fiesta and trabajador_id = $id_trabajador ";
@@ -18,9 +18,9 @@ if(isset($_POST['puesto'])){
 
             if($puestos['asignacion'] == 0){
 
-                    $id_puesto = $_POST['puesto'];
-                    $id_fiesta = $_POST['id_fiesta'];
-                    $id_trabajador = $_POST['id_trabajador'];
+                    $id_puesto = filter_var($_POST['puesto'], FILTER_VALIDATE_INT);
+                    $id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
+                    $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
                     $email_enviado = 0;
                     $fichado = 0;
 

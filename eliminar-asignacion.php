@@ -89,7 +89,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
               } ?><tbody><?php
                while ($trabajadores = $resultado->fetch_assoc()) {?>
 
-                <tr id="<?php $trabajadores['id_trabajador'] ?>">
+                <tr id="<?php echo $trabajadores['id_trabajador'] ?>">
                   <td><p><?php echo $trabajadores['nombre']; ?> 
                   </td>
                   <td><p><?php echo $trabajadores['primer_apellido'] . " " . $trabajadores['segundo_apellido']; ?></p></td>

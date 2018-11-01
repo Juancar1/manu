@@ -1,8 +1,8 @@
 <?php
 
-
-$id_trabajador = $_POST['id_trabajador'];
-$id_fiesta = $_POST['id_fiesta'];
+// Elimina la asignación de un trabajador a una fiesta
+$id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
+$id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
 
 try {
     include_once 'funciones/conexion.php';
@@ -12,7 +12,7 @@ try {
     if ($stmt->affected_rows) {
         $respuesta = array(
             'respuesta' => 'exito',
-            
+            'id_trabajador' => $id_trabajador 
         );
     } else {
         $respuesta = array(

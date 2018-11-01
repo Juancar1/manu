@@ -57,7 +57,7 @@ $id_trabajador = $_GET['id'];
               </div>
                <?php } ?>
               <div class="form-group">
-                <input class="form-control" placeholder="Motivo:" value="Envío de datos personales">
+                <input class="form-control" placeholder="Motivo:" value="Envío de fiestas asignadas">
               </div>
               <div class="form-group">
               <textarea id="compose-textarea" name="textarea" class="form-control compose-textarea" style="height: 300px">

@@ -1,7 +1,8 @@
 <?php  
-$textarea = $_POST['textarea'];
-$id_trabajador = $_POST['id_trabajador'];
-$email = $_POST['email'];
+
+$textarea = htmlspecialchars($_POST['textarea']);
+$id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
+$email = htmlspecialchars($_POST['email']);
 
 
                 $cabeceras = 'MIME-Version: 1.0' . "\r\n";
