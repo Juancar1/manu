@@ -55,38 +55,38 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label for="url_foto">Imagen:</label>
-                                    <input class="form-control" type="file" id="url_foto" name="archivo_imagen3">
+                                    <input class="form-control" type="file" id="url_foto" name="archivo_imagen3" accept="image/png, .jpeg, .jpg, image/gif">
                                     <p class="help-block">Foto tipo carné del trabajador</p>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="dni">DNI: </label>
-                                    <input type="text" class="form-control" id="dni" name="dni" placeholder="ej: 12345678M" value="<?php echo $trabajador['dni'] ?>"readonly>
+                                    <input type="text" class="form-control" id="dni" name="dni" value="<?php echo $trabajador['dni'] ?>"readonly>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="nombre">Nombre: </label>
-                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $trabajador['nombre'] ?>" minlength="4" maxlength="20" required>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $trabajador['nombre'] ?>" minlength="2" maxlength="20" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,20}" required/>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="primer_apellido">Primer apellido: </label>
-                                    <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Primer apellido" value="<?php echo $trabajador['primer_apellido'] ?>" minlength="4" maxlength="20" required>
+                                    <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" placeholder="Primer apellido" value="<?php echo $trabajador['primer_apellido'] ?>" minlength="2" maxlength="20" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,20}" required/>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="segundo_apellido">Segundo apellido: </label>
-                                    <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo apellido" value="<?php echo $trabajador['segundo_apellido'] ?>" maxlength="20">
+                                    <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" placeholder="Segundo apellido" value="<?php echo $trabajador['segundo_apellido'] ?>" maxlength="20" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,20}"/>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="ss">Número Seguridad Social: </label>
-                                    <input type="text" class="form-control" id="ss" name="ss" placeholder="" value="<?php echo $trabajador['ss'] ?>"maxlength="12" minlength="12"/> 
+                                    <input type="text" class="form-control" id="ss" name="ss" placeholder="" value="<?php echo $trabajador['ss'] ?>" maxlength="12" minlength="12" pattern="[0-9]{12}" /> 
                                     <p class="help-block">Introduce los 12 números sin espacios</p>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="banco">Número cuenta bancaria: </label>
-                                    <input type="text" class="form-control" id="banco" name="banco" placeholder="ES123456789..." value="<?php echo $trabajador['banco'] ?>" placeholder="ES123456789..." maxlength="24" minlength="24">
+                                    <input type="text" class="form-control" id="banco" name="banco" value="<?php echo $trabajador['banco'] ?>" minlength="24" maxlength="24" pattern="[ES]{2}[0-9]{22}">
                                     <p class="help-block">Introduce los 24 carácteres sin espacios</p>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="telefono">Telefono: </label>
-                                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="ej: 123456789" value="<?php echo $trabajador['tlf'] ?>" maxlength="9" minlength="9">
+                                    <input type="tel" pattern="[0-9]{9}" class="form-control" id="telefono" name="telefono" value="<?php echo $trabajador['tlf'] ?>" maxlength="9" minlength="9">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="email">Email: </label>
@@ -110,17 +110,17 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="url_banco">Imagen Banco:</label>
-                                    <input class="form-control" type="file" id="url_banco" name="archivo_imagen4">
+                                    <input class="form-control" type="file" id="url_banco" name="archivo_imagen4" accept="image/png, .jpeg, .jpg, image/gif">
                                     <p class="help-block">Añade foto del banco</p>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="url_dni_1">Imagen DNI Cara A:</label>
-                                    <input class="form-control" type="file" id="url_dni_1" name="archivo_imagen1">
+                                    <input class="form-control" type="file" id="url_dni_1" name="archivo_imagen1" accept="image/png, .jpeg, .jpg, image/gif">
                                     <p class="help-block">Añade foto del DNI cara A</p>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="url_dni_2">Imagen DNI Cara B:</label>
-                                    <input class="form-control" type="file" id="url_dni_2" name="archivo_imagen2">
+                                    <input class="form-control" type="file" id="url_dni_2" name="archivo_imagen2" accept="image/png, .jpeg, .jpg, image/gif">
                                     <p class="help-block">Añade foto del DNI cara B</p>
                                 </div>
                                 <div>

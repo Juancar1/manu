@@ -40,11 +40,11 @@ if(($_SESSION['acceso_administrador']) == 1):?>
               <div class="box-body">
                       <div class="form-group">
                           <label for="nombre">Nombre Fiesta: </label>
-                          <input type="text" class="form-control" id="nombre_fiesta" name="nombre_fiesta" placeholder="Nombre de la fiesta" require maxlength="50" required>
+                          <input type="text" class="form-control" id="nombre_fiesta" name="nombre_fiesta" placeholder="Nombre de la fiesta" require maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{4,50}" required/>
                       </div>
                       <div class="form-group">
                           <label for="nombre">Sala: </label>
-                          <input type="text" class="form-control" id="nombre_sala" name="nombre_sala" placeholder="Nombre de la sala" maxlength="50" required>
+                          <input type="text" class="form-control" id="nombre_sala" name="nombre_sala" placeholder="Nombre de la sala" maxlength="50" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{4,50}" required/>
                       </div>
                       <br>
                       <div class="form-group">

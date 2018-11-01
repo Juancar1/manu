@@ -4,7 +4,8 @@ if ($_POST['registro'] == 'nuevo') {
 
     $texto = htmlspecialchars($_POST['texto']);
     $texto = ucfirst(strtolower($texto));
-    $fecha= date("Y-m-d H:i:s");
+    $fecha= htmlspecialchars(date("Y-m-d H:i:s"));
+    
     try {
 
         include_once 'funciones/conexion.php';

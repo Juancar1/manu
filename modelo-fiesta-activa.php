@@ -4,7 +4,7 @@
 // fiesta activa archivado n 2 (se activa la fiesta para fichar)
 if($_POST['archivado'] == 2) {
 
-        $id_fiesta = $_POST['id_fiesta'];
+        $id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
         $archivado = 2;
 
 try {
@@ -41,9 +41,8 @@ try {
  if($_POST['archivado'] == 3) {
 
     
-            $observaciones = $_POST['observaciones'];
-      
-        $id_fiesta = $_POST['id_fiesta'];
+        $observaciones = htmlspecialchars($_POST['observaciones']);
+        $id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
         $archivado = 3;
 
 

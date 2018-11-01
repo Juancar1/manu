@@ -1,7 +1,7 @@
 <?php
 include_once 'templates/header.php';
 include_once 'funciones/conexion.php';
-$usuario = $_POST['usuario'];
+$usuario = htmlspecialchars($_POST['usuario']);
 $id_admin = 1;?>
 
 

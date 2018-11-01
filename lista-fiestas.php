@@ -47,7 +47,7 @@
 
                   try {
                     $sql = "SELECT id_fiesta, nombre_evento, nombre_sala, archivado, fecha, hora_inicio, observaciones, editado FROM fiestas ";
-                    $sql .= " WHERE archivado = 2 or 0 ";
+                    $sql .= " WHERE archivado = 2 or archivado = 0";
                     $sql .= " ORDER BY fecha, hora_inicio ASC ";
                     $resultado = $conn->query($sql);
                   }catch (Exception $e){

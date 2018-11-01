@@ -5,18 +5,18 @@ if ($_POST['registro'] == 'nuevo') {
 
    
        
-        $nombre_fiesta = $_POST['nombre_fiesta'];
+        $nombre_fiesta = htmlspecialchars($_POST['nombre_fiesta']);
         $nombre_fiesta = ucfirst(strtolower($nombre_fiesta));
-        $nombre_sala = $_POST['nombre_sala'];
+        $nombre_sala = htmlspecialchars($_POST['nombre_sala']);
         $nombre_sala = ucfirst(strtolower($nombre_sala));
         //fecha
-        $fecha_evento = $_POST['fecha_evento'];
+        $fecha_evento = htmlspecialchars($_POST['fecha_evento']);
         //hora
-        $hora_evento = $_POST['hora_evento'];
-        $texto = $_POST['texto'];
+        $hora_evento = htmlspecialchars($_POST['hora_evento']);
+        $texto = htmlspecialchars($_POST['texto']);
         $texto = ucfirst(strtolower($texto));
         $archivado = 0;
-
+        
 
     try {
 
@@ -52,7 +52,7 @@ if ($_POST['registro'] == 'nuevo') {
 if ($_POST['registro'] == 'eliminar') {
 
     
-    $id_borrar = $_POST['id'];
+    $id_borrar = filter_var($_POST['id'], FILTER_VALIDATE_INT);
 
     try{
         include_once 'funciones/conexion.php';

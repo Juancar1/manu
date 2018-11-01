@@ -5,7 +5,7 @@
 if ($_POST['registro'] == 'nuevo') {
 
 
-    $nombre_fiesta = $_POST['nombre_puesto'];
+    $nombre_fiesta = htmlspecialchars($_POST['nombre_puesto']);
     $nombre_fiesta = ucfirst(strtolower($nombre_fiesta));
 
     try {
@@ -41,7 +41,7 @@ if ($_POST['registro'] == 'nuevo') {
 if ($_POST['registro'] == 'eliminar') {
 
 
-    $id = $_POST['id'];
+    $id = filter_var($_POST['id'], FILTER_VALIDATE_INT);
 
     try{
         include_once 'funciones/conexion.php';

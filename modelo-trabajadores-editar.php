@@ -6,23 +6,23 @@
 //     );
 //     die(json_encode($respuesta));
 
-   $nombre = $_POST['nombre']; 
+   $nombre = htmlspecialchars($_POST['nombre']); 
    $nombre = ucwords(strtolower($nombre));
-   $primer_apellido = $_POST['primer_apellido'];
+   $primer_apellido = htmlspecialchars($_POST['primer_apellido']);
    $primer_apellido = ucwords(strtolower($primer_apellido));
    $segundo_apellido = $_POST['segundo_apellido'];
    $segundo_apellido = ucwords(strtolower($segundo_apellido));
-   $dni = $_POST['dni'];
-   $banco = $_POST['banco'];
-   $ss = $_POST['ss'];
-   $telefono = $_POST['telefono'];
-   $email = $_POST['email'];
-   $observaciones = $_POST['observaciones'];
-   $id_registro = $_POST['id'];
-   $imagen_url1 = $dni . "_1.jpg";
-   $imagen_url2 = $dni . "_2.jpg";
-   $imagen_url3 = $dni . "_3.jpg";
-   $imagen_url4 = $dni . "_4.jpg";
+   $dni = htmlspecialchars($_POST['dni']);
+   $banco = htmlspecialchars($_POST['banco']);
+   $ss = htmlspecialchars($_POST['ss']);
+   $telefono = filter_var($_POST['telefono'], FILTER_VALIDATE_INT);
+   $email = htmlspecialchars($_POST['email']);
+   $observaciones = htmlspecialchars($_POST['observaciones']);
+   $id_registro = filter_var($_POST['id'], FILTER_VALIDATE_INT);
+   $imagen_url1 = htmlspecialchars($dni) . "_1.jpg";
+   $imagen_url2 = htmlspecialchars($dni) . "_2.jpg";
+   $imagen_url3 = htmlspecialchars($dni) . "_3.jpg";
+   $imagen_url4 = htmlspecialchars($dni) . "_4.jpg";
   
 
 

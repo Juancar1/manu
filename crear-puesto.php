@@ -40,8 +40,8 @@ if(($_SESSION['acceso_administrador']) == 1):?>
         <form role="form" method="post" name="guardar-registro" id="guardar-registro" action="modelo-puesto.php">
               <div class="box-body">
                       <div class="form-group">
-                          <label for="nombre">Nombre del puesto: </label>
-                          <input type="text" class="form-control" id="nombre_puesto" name="nombre_puesto" placeholder="Nombre del puesto" required>
+                          <label for="nombre_puesto">Nombre del puesto: </label>
+                          <input type="text" class="form-control" id="nombre_puesto" name="nombre_puesto" placeholder="Nombre del puesto" minlength="2" maxlength="20" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{20}" required/>
                       </div>
               </div>
 
@@ -49,7 +49,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
 
               <div class="box-footer">
                     <input type="hidden" name="registro" value="nuevo">
-                    <button type="submit" class="btn btn-primary" id="crear_registro_admin">Añadir</button>
+                    <button type="submit" class="btn btn-primary" id="crear_puesto">Añadir</button>
               </div>
             </form>
 

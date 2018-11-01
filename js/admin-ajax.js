@@ -150,6 +150,42 @@ $(document).ready(function () {
   });
 
 
+      // Crear puesto
+      $('#crear_puesto').on('click', function (e) {
+        e.preventDefault();
+
+        var nombre_puesto = $('#nombre_puesto').val();
+
+          $.ajax({
+            type: 'post',
+            data: {
+              'registro' : "nuevo",
+              'nombre_puesto': nombre_puesto,
+            },
+            url: 'modelo-puesto.php',
+            success: function (data) {
+              console.log(data);
+              var resultado = JSON.parse(data);
+              if (resultado.respuesta == 'error') {
+                swal(
+                  'Error',
+                  'Hay algún tipo de error al registrar el puesto',
+                  'error'
+                )
+              } 
+              setTimeout(function () {
+                window.location.href = 'crear-puesto.php';
+              }, 500)
+            }
+          })
+      });
+    
+    
+
+
+
+
+
   $('.asignar_trabajador').on('click', function (e) {
     e.preventDefault();
 
