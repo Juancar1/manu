@@ -7,9 +7,6 @@
       include_once 'templates/navegacion.php';
       if(($_SESSION['acceso_administrador']) == 1):?>
 
- $sql = " SET GLOBAL group_concat_max_len=10500 ";
-?>
-
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

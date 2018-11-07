@@ -1,13 +1,11 @@
 <?php 
-
 //crea un nuevo usuario y contraseña
-if ($_POST['registro'] == 'nuevo') {
- 
-    $usuario = $_POST['nombre'];
-    $password = $_POST['password'];
+if ($_POST['registro'] == 'nuevo-admin') {
+   
+    $usuario = htmlspecialchars($_POST['nombre']);
+    $password = htmlspecialchars($_POST['password']);
+    $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
     $acceso_administrador = 0;
-    $id_trabajador = $_POST['id_trabajador'];
-    
     
     $opciones = array(
         'cost' => 12
@@ -25,7 +23,7 @@ if ($_POST['registro'] == 'nuevo') {
         $id_registro = $stmt->insert_id;
         if ($id_registro > 0) {
             $respuesta = array(
-                'respuesta' => 'exito',
+                'respuesta' => 'exito-admin',
                 'id_admin' => $id_registro
             );
           die(json_encode($respuesta));
@@ -50,7 +48,7 @@ if ($_POST['registro'] == 'nuevo') {
 if ($_POST['registro'] == 'eliminar') {
 
     
-    $id_borrar = $_POST['id'];
+    $id_borrar = filter_var($_POST['id'], FILTER_VALIDATE_INT);
 
     try{
         include_once 'funciones/conexion.php';

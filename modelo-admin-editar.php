@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_POST['contraseña']) == 'modificar') {
-
-    $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+if (isset($_POST['password']) == 'modificar') {
+  
+    
+    $password = htmlspecialchars($_POST['password2']);
     $id_admin = 1;
 
     $opciones = array(
@@ -41,12 +41,14 @@ if (isset($_POST['contraseña']) == 'modificar') {
         'respuesta' => 'error'
     );
 }
-die(json_encode($respuesta));
+    die(json_encode($respuesta));
+
 }
 
 
-    $id_admin = $_POST['id_admin'];
-    $acceso = $_POST['acceso'];
+
+    $id_admin = filter_var($_POST['id_admin'], FILTER_VALIDATE_INT);
+    $acceso = filter_var($_POST['acceso'], FILTER_VALIDATE_INT);
 
 
 try {

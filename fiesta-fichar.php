@@ -1,9 +1,4 @@
 <?php
-
-//$id_fiesta = $_GET['id'];
-// if (!filter_var($id_fiesta, FILTER_VALIDATE_INT)) {
-//   die("Error");
-// }
 include_once 'funciones/sesiones.php';
 include_once 'funciones/conexion.php';
 include_once 'templates/header.php';

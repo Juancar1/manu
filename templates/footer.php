@@ -23,7 +23,7 @@
 <!-- login 3.3.7 -->
 <script src="js/login-ajax.js"></script>
 <!-- admin ajax -->
-<script src="js/admin-ajax.js"></script>
+<script src="js/trabajadores-ajax.js"></script>
 <!-- SlimScroll -->
 <script src="js/jquery.slimscroll.min.js"></script>
 <!-- bootstrap time picker -->
@@ -54,6 +54,10 @@
 <script src="js/app.js"></script> 
 <!-- Ajax trabajadores -->
 <script src="js/trabajadores.js"></script>
+<!-- Ajax y notificaciones admin -->
+<script src="js/admin.js"></script>
+<!-- Alertas admin-->
+<script src="js/admin-notificaciones.js"></script>
 <!-- CK Editor -->
 <script src="js/ckeditor.js"></script>
 <!-- PDF -->

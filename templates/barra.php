@@ -135,7 +135,7 @@
        <?php } ?>
 
    
-
+                          
           <li class="dropdown tasks-menu">
                     <?php 
                         $sql = "SELECT COUNT(id_notas) AS notas FROM notas ";

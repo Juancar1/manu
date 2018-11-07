@@ -13,22 +13,14 @@ $(document).ready(function () {
 
         $('#cuenta-atras-activa').countdown(fechaHoraEvento)
 
-        // 5 horas antes, el contador se ve
+       
         .on('update.countdown', function (event) {
 
-          // var dias = event.strftime('%D');
-          // var horas = event.strftime('%H');
-          // var minutos = event.strftime('%M');
-
-          // if ((dias == 0) && (horas < 5)){
-          // $('#cuenta-atras-activa').text(event.strftime('%H:%M:%S'));
-      //  }
      })
 
 
         //contador a cero, registro en base de datos y mensaje
-
-    .on('finish.countdown', function (event) {
+        .on('finish.countdown', function (event) {
             
   
                    

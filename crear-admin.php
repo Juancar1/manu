@@ -18,9 +18,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
     <section class="content-header">
       <h1>
         Crear administrador
-        <small>El nombre de usuario tiene que ser único</small>
       </h1>
-      
     </section>
 
     <div class="row">
@@ -31,21 +29,19 @@ if(($_SESSION['acceso_administrador']) == 1):?>
 
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Rellena el formulario para dar de alta a un nuevo administrador</h3>
-        </div>
+       
        
         <!-- /.box-body -->
-       
-       
+        <form role="form" id="crear-admin" action="modelo-admin.php">
+
               <div class="box-body">
                       <div class="form-group">
                           <label for="nombre">Usuario: </label>
-                          <input type="text" class="form-control" id="nombre_admin" name="" placeholder="Usuario" required>
+                          <input type="text" class="form-control" id="nombre_admin" minlength="2" maxlength="50" name="" placeholder="Usuario" required>
                       </div>
                       <div class="form-group">
                           <label for="password">Password: </label>
-                          <input type="text" class="form-control" id="password_admin" name="" placeholder="Password" required>
+                          <input type="text" class="form-control" id="password_admin" minlength="8" maxlength="40" name="" placeholder="Password" required>
                       </div><br>
 
                       
@@ -69,20 +65,24 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                                     ?>
                                    
                           </select>
+
+                          
+                          
                         </div> <br>
               </div>
 
-         <!-- /.box-body -->
-
               <div class="box-footer">
-                    <input type="hidden" name="registro" value="nuevo">
-                    <button type="submit" class="btn btn-primary" id="crear_registro_admin">Añadir</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
               </div>
+            </form>
+
          
           </div>
     
 
        </section>
+       
+       
     <!-- /.content -->
       </div><!-- bootstrap md-8 -->
     </div><!-- bootstrap box -->

@@ -92,63 +92,6 @@ $(document).ready(function () {
   });
 
 
-  //crear usuario, contraseña y asignarlo a trabajador
-  $('#crear_registro_admin').on('click', function (e) {
-    e.preventDefault();
-    
-    var trabajador =  $('#trabajador_select_usuario').val();
-    var nombre = $('#nombre_admin').val();
-    var password = $('#password_admin').val();
-
-
-    swal({
-      title: 'Estás seguro??',
-      text: "Vas crear un usuario y contraseña",
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, Agregar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.value) {
-      $.ajax({
-        type: 'post',
-        data: {
-          'id_trabajador': trabajador,
-          'registro' : "nuevo",
-          'nombre': nombre,
-          'password': password
-
-        },
-        url: 'modelo-admin.php',
-        success: function (data) {
-          console.log(data);
-          var resultado = JSON.parse(data);
-          if (resultado.respuesta == 'exito') {
-            if (result.value) {
-              swal(
-                'Agregado!',
-                'Trabajador agregado.',
-                'success'
-              )
-            }
-          } else {
-            swal(
-              'Error',
-              'Motivos del error -Usuario ya existe -Trabajador, usuario o trabajador no seleccionado -Trabajador ya tiene usuario asignado anteriormente ',
-              'error'
-            )
-          }
-
-        }
-
-      })
-    }
-    })
-
-  });
-
 
       // Crear puesto
       $('#crear_puesto').on('click', function (e) {
@@ -185,7 +128,7 @@ $(document).ready(function () {
 
 
 
-
+      // 
   $('.asignar_trabajador').on('click', function (e) {
     e.preventDefault();
 
@@ -410,8 +353,7 @@ $(document).ready(function () {
                 'Trabajador borrado de esta fiesta',
                 'success'
               )
-              // esta linea no funciona, 
-               jQuery('[data-id="' + resultado.id_trabajador + '"]').parents('tr').remove();
+              jQuery('[id-trabajador="' + resultado.id_trabajador + '"]').parents('tr').remove();
             }
           } else {
             swal(
@@ -430,71 +372,5 @@ $(document).ready(function () {
 
   });
 
-    // Da acceso o lo quita a administradores
-    $('.editar_admin').on('click', function (e) {
-    e.preventDefault();
-
-        var id_admin = $(this).attr('data-id');
-        var tipo = $(this).attr('data-tipo');
-        var acceso = $(this).attr('acceso');
-        var usuario = $(this).attr('usuario');
-
-        swal({
-          title: 'Estás seguro??',
-          text: "Vas a cambiar el estado de acceso a " + usuario,
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Adelante, Sí!',
-          cancelButtonText: 'cancelar'
-        }).then((result) => {
-          if (result.value) {
-          $.ajax({
-            type: 'post',
-            data: {
-              'id_admin': id_admin,
-              'usuario' : usuario,
-              'acceso' : acceso,
-              'registro': 'modificar'
-            },
-            url: 'modelo-' + tipo + '.php',
-            success: function (data) {
-              console.log(data);
-              var resultado = JSON.parse(data);
-              if (resultado.respuesta == 'exito') {
-                if (result.value) {
-                  swal(
-                    'Modificado!',
-                    'Has cambiado el estado.',
-                    'success'
-                  )
-                  setTimeout(function () {
-                    window.location.href = 'lista-admin.php';
-                  }, 500)
-                  if(resultado.acceso == '1'){
-                    $("#acceso_administrador").val("Con acceso");
-                  } else {
-                    $("#acceso_administrador").val("Sin acceso");
-                  }
-                }
-              } else {
-                swal(
-                  'Error',
-                  'No se pudo eliminar',
-                  'error'
-                )
-              }
-    
-            }
-    
-          })
-        }
-          
-        })
-    
-        
-
-    })
-
+   
 });

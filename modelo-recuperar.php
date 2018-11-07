@@ -16,7 +16,7 @@ $id_admin = 1;?>
 
    
        
-            $cadena = $usuario.rand(1,9999999);
+            $cadena = $usuario.rand(1,9999999) + 'AB__';
            
          
 

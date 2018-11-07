@@ -34,45 +34,26 @@ if(($_SESSION['acceso_administrador']) == 1):?>
           <h3 class="box-title">Introduce tu nueva contraseña</h3>
         </div>
 
-        <?php
-              try {
-                $sql = " SELECT id_admin, usuario, password, acceso_administrador ";
-                $sql .= " FROM admins ";
-                $sql .= " WHERE id_admin = 1 ";
-
-                $resultado = $conn->query($sql);
-              } catch (Exception $e) {
-                $error = $e->getMessage();
-                echo $error;
-              }
-
-              while ($admin = $resultado->fetch_assoc()) { ?>
-                 
-
         <!-- /.box-body -->
        
-        <form role="form" method="post" name="guardar-registro" id="guardar-registro" action="modelo-admin-editar.php">
+        <form role="form" method="post" name="modificar-contrasena" id="modificar-contrasena" action="modelo-admin-editar.php">
+          <legend></legend>
               <div class="box-body">
                       <div class="form-group">
-                          <label for="nombre">Usuario: </label>
-                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Usuario" value="<?php echo $admin['usuario'] ?>"readonly>
-                      </div>
-                      <div class="form-group">
                           <label for="password">Password: </label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                          <input type="password" class="form-control" id="password" name="password" minlength="8" maxlength="40" placeholder="Password" >
                       </div>
               </div>
 
          <!-- /.box-body -->
 
               <div class="box-footer">
-                        <input type="hidden" name="contraseña" value="modificar">
-                        <button type="submit" class="btn btn-primary" id="">Grabar</button>
+                        <input type="hidden" name="password" value="nuevo">
+                        <button type="submit" class="btn btn-primary modificar-contrasena" >Enviar</button>
                   </div>
           </form>
           </div>
-    
-              <?php } ?>
+
        </section>
     <!-- /.content -->
       </div><!-- bootstrap md-8 -->

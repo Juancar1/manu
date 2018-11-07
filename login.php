@@ -29,12 +29,12 @@
         <form method="post" name="login-admin-form" id="login-admin" action="login-admin.php">
               <div class="form-group has-feedback">
               <i class="fas fa-user"></i>
-                    <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+                    <input type="text" class="form-control" name="usuario" minlength="2" maxlength="50" placeholder="Usuario" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" requeired/>
                     
               </div>
               <div class="form-group has-feedback">
               <i class="fas fa-unlock-alt"></i>
-                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" minlength="8" maxlength="40" placeholder="Password" requeired/>
                    
               </div>
               <div class="row">

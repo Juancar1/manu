@@ -3,9 +3,9 @@
 
 //verifica el usuario y contraseña
 if (isset($_POST['login-admin'])) {
-  
-    $usuario = $_POST['usuario'];
-    $password = $_POST['password'];
+   
+    $usuario = htmlspecialchars($_POST['usuario']);
+    $password = htmlspecialchars($_POST['password']);
   
 
     try {
