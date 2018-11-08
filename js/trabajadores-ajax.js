@@ -128,7 +128,7 @@ $(document).ready(function () {
 
 
 
-      // 
+      // asignar un trabajador a una fiesta
   $('.asignar_trabajador').on('click', function (e) {
     e.preventDefault();
 

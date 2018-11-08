@@ -50,8 +50,6 @@
 <script src="js/icheck.min.js"></script>
 <!-- Login ajax -->
 <script src="js/nota-ajax.js"></script>
-<!-- app.js -->
-<script src="js/app.js"></script> 
 <!-- Ajax trabajadores -->
 <script src="js/trabajadores.js"></script>
 <!-- Ajax y notificaciones admin -->
@@ -68,7 +66,7 @@
 <script src="js/buscador.js"></script>
 <script type="text/javascript" src="js/datepicker-es.js" charset="UTF-8"></script>
 <!-- CK Editor -->
-<script src="js/main.js"></script>
+<script src="js/pdf.js"></script>
 <script>
 
   

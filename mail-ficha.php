@@ -33,7 +33,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
             <?php
                try {
-                $sql = " SELECT nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones from trabajadores ";
+                $sql = " SELECT nombre, primer_apellido, segundo_apellido, dni, url_dni_1, url_dni_2, banco, ss, tlf, email, url_foto, editado, observaciones, ultimo_email_ficha from trabajadores ";
                 $sql .= " WHERE id_trabajador = $id_trabajador ";
 
                 $resultado = $conn->query($sql);
@@ -97,29 +97,13 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
               <a href="ver-trabajador.php?id=<?php echo $id_trabajador ?>" class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
               </div>
             </div>
-            <!-- /.box-footer -->
-         
-          <!-- /. box -->
-        
-                   
+                    <?php setlocale(LC_ALL,"es_ES"); 
+                    $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($trabajador['ultimo_email_ficha']));?>
+            <div class="ultimo-email"><strong>Último email enviado: </strong><?php echo $fecha_formateada; ?></div>
         <?php } ?>
-
-       <!-- </form>    -->
- 
-        
-      
-        <!-- /.box-footer-->
       </div>
-      <!-- /.box -->
-
      </section>
      </div>
-
-    
-    <!-- /.content -->
   </div>
-
-
-
 <?php include_once 'templates/footer.php'; 
 endif;?>

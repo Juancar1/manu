@@ -27,13 +27,4 @@ $(document).ready(function () {
       })
 
 
-      
-     
-
-        
-       
-
-  
-
-
 });

@@ -54,7 +54,7 @@
 <body>
     <h1>Página no encontrada</h1>
     <p>Revisa bien la dirección</p>
-    <a href="">Inicio</a>
+    <a href="index.php">Inicio</a>
 </body>
 </html>
 <!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

@@ -70,7 +70,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
                     <?php
                       try {
-                        $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio, archivado, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_trabajador, nombre, primer_apellido, segundo_apellido ";
+                        $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio, archivado, id_asignaciones, trabajador_id, fiesta_id, puesto_id, id_trabajador, nombre, primer_apellido, segundo_apellido, ultimo_email_asignaciones ";
                         $sql .= " FROM fiestas ";
                         $sql .= " INNER JOIN asignaciones ";
                         $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id ";
@@ -97,7 +97,8 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                       </ul>
                         <br>
 
-                        
+                        <?php setlocale(LC_ALL,"es_ES"); 
+                        $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($asignaciones['ultimo_email_asignaciones']));?>
                  <?php } ?>
 
                       <p>Si hay algún error, puedes contestar a este email detallando que dato hay que corregir o actualizar a la mayor brevedad posible</p>
@@ -114,6 +115,8 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
               <div>
               <a href="ver-trabajador.php?id=<?php echo $id_trabajador ?>" class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
               </div>
+              
+              <div class="ultimo-email-asignaciones"><strong>Último email enviado: </strong><?php echo $fecha_formateada; ?></div>
             </div>
 
       </div>

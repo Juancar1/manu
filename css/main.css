@@ -160,6 +160,20 @@ textarea {
         margin-left:5%;
     }
   }
+.hora-fichado{
+    text-align:center;
+}
+/* mail */
+.ultimo-email,
+.ultimo-email-asignaciones{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+div.box-body > div:nth-child(3) > ul > li:nth-child(6) > a,
+div.box-body > div:nth-child(3) > ul > li:nth-child(5) > a{
+    display:none;
+}
 /* lista fiesta */
 @media (max-width: 400px) {
     .nombre_sala,

@@ -280,7 +280,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                                 <td><?php echo $asignaciones['nombre_sala'];  ?></td>
                                                 <td><?php echo $asignaciones['fecha'];  ?></td>
                                                 <td><?php echo $asignaciones['hora_inicio'] ; ?></td>
-                                                <td><?php echo $fecha_formateada ; ?></td>
+                                                <td class="hora-fichado"><?php echo $fecha_formateada ; ?></td>
                                                 </tr>
                                                   <?php  }?>      
                                                
