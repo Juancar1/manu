@@ -1,6 +1,6 @@
 <?php  
 
-$textarea = htmlspecialchars($_POST['textarea']);
+$textarea = $_POST['textarea'];
 $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
 $email = htmlspecialchars($_POST['email']);
 

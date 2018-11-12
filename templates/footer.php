@@ -1,10 +1,11 @@
 
 
- <footer id="main-footer" class="main-footer">
+ <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
+      <b>Version</b> 2.4.0
     </div>
-    <strong>Diseñado por <a href="https://websitestory.com.es">Web Sites Story</a></strong>  2018
+    <strong>Copyright &copy; 2016-2018 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved. Developed: <strong> Juancar Pliego</strong>
   </footer>
 </div>
 

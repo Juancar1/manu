@@ -120,9 +120,9 @@ $id_fiesta = $_GET['id'];
           <a href="ver-fiestas-print.php?id=<?php echo $id_fiesta ?>" id="imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
           <a href="ver-fiestas.php?id=<?php echo $id_fiesta ?>"  class="btn btn-default"><i class="fas fa-caret-right"></i> Datos completos</a>
           </button>
-          <button id="cmd" type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+          <!-- <button id="cmd" type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
             <i class="fa fa-download"></i> Generar PDF
-          </button>
+          </button> -->
         </div>
       </div>
     </section>

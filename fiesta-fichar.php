@@ -26,7 +26,6 @@ if(($_SESSION['acceso_administrador']) == 1):?>
       <div class="row">
        <div class="col-xs-12 fichar-superior">
             <div class="box">
-
             <?php
               try {
                 $sql = " SELECT id_fiesta, nombre_sala, nombre_evento, fecha, hora_inicio, archivado, observaciones ";
@@ -81,7 +80,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
              
                    
                 
-                 
+                 <div>
                   <div class="col-md-6 conteo">
                       <li class="user-body">
                 <div class="row">
@@ -149,12 +148,13 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                     </div>
                 <?php } ?>
                 </div>
+                 </div>
                 <!-- /.row -->
               </li>
           </div><!--col-md-6-->
 
 
-
+            
                
             <!-- /.box-header -->
        
@@ -163,8 +163,8 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                 <tr>
                   <th>Nombre</th>
                   <th>Apellidos</th>
-                  <th>DNI</th>
-                  <th>Foto</th>
+                  <th class="movil">DNI</th>
+                  <th class="movil">Foto</th>
                   <th>Fichar</th>
                 </tr>
               <?php
@@ -177,7 +177,7 @@ if(($_SESSION['acceso_administrador']) == 1):?>
                   $sql .= " INNER JOIN fiestas ";
                   $sql .= " ON fiestas.id_fiesta=asignaciones.fiesta_id";
                   $sql .= " WHERE fiesta_id =  $id_fiesta and archivado = 2 and fichado = 0 ";
-                  $sql .= " ORDER BY fecha ASC ";
+                  $sql .= " ORDER BY nombre ASC ";
 
                   $resultado = $conn->query($sql);
               } catch (Exception $e) {
@@ -185,12 +185,12 @@ if(($_SESSION['acceso_administrador']) == 1):?>
               } ?><tbody><?php
               
                while ($fichar = $resultado->fetch_assoc()) {?>
-                <tr id="<?php $fichar['id_trabajador']; ?>">
+                <tr>
                   <td><p><?php echo $fichar['nombre']; ?> 
                   </td>
                   <td><p><?php echo $fichar['primer_apellido'] . " " . $fichar['segundo_apellido']; ?></p></td>
-                  <td><?php echo $fichar['dni']; ?></td>
-                  <td><img src="img/trabajadores/<?php echo $fichar['url_foto']; ?>" width="150px"></td>
+                  <td class="movil"><?php echo $fichar['dni']; ?></td>
+                  <td class="movil"><img src="img/trabajadores/<?php echo $fichar['url_foto']; ?>" width="100px"></td>
                   <td>
                    <a href="#" id="<?php echo $fichar['id_asignaciones']; ?>" nombre=<?php echo $fichar['nombre'] . " " . $fichar['primer_apellido'];  ?> class="btn bg-green bnt-flat margin ficha-trabajador">
                     <i class="far fa-check-circle"></i>

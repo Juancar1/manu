@@ -123,7 +123,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="fiesta-fichar.php" class="btn btn-primary">Fichar</a>
+                  <a href="fiesta-fichar.php" class="btn btn-primary" style="background-color:#3D8DBC";>Fichar</a>
                 </div>
                 <div class="pull-right">
                   <button id="<?php echo $id_fiesta ?>" type="button" class="btn btn-primary cerrar-fiesta">Cerrar fiesta</button>

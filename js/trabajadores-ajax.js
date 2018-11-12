@@ -170,7 +170,6 @@ $(document).ready(function () {
                 'Trabajador agregado.',
                 'success'
               )
-             // jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
             }
           } else {
             swal(
@@ -289,8 +288,10 @@ $(document).ready(function () {
                 'Trabajador fichado.',
                 'success'
               )
-           jQuery('[id="' + resultado.id_fichado + '"]').parents('tr').remove();
-           location.reload(true);
+              jQuery('[id="' + resultado.id_fichado + '"]').parents('tr').remove();
+              setTimeout(function () {
+                window.location.href = 'fiesta-fichar.php';
+              }, 3000)
             }
           } else {
             swal(

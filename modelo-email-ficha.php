@@ -1,13 +1,13 @@
 <?php
 
 
-$textarea = htmlspecialchars($_POST['textarea']);
+$textarea = $_POST['textarea'];
 $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
 $email = htmlspecialchars($_POST['email']);
 
 
                 $cabeceras = 'MIME-Version: 1.0' . "\r\n";
-                $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                $cabeceras .= 'Content-type: text/html; ISO-8859-1 a UTF-8' . "\r\n";
                 $cabeceras .= 'From: <juancarpliego@gmail.com>' . "\r\n";
 
 

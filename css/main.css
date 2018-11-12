@@ -378,6 +378,11 @@ div.box-body > div:nth-child(3) > ul > li:nth-child(5) > a{
 .centrar-aviso{
     text-align: center;
 }
+@media (max-width: 450px) {
+    .movil {
+      display: none;
+    }
+  }
 /* versiones */
 .texto_versiones{
     margin-left: 10px;

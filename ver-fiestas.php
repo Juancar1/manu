@@ -125,9 +125,9 @@ $id_fiesta = $_GET['id'];
         <a href="lista-asignacion.php"  class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
           <a href="ver-fiestas-print.php?id=<?php echo $id_fiesta ?>" id="imprimir" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Imprimir</a>
           </button>
-          <button id="cmd" type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+          <!-- <button id="cmd" type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
             <i class="fa fa-download"></i> Generar PDF
-          </button>
+          </button> -->
         </div>
       </div>
     </section>

@@ -115,7 +115,7 @@ if ($_POST['registro_trabajador'] == 'nuevo') {
         $stmt->bind_param('sssssssssssss', $nombre, $primer_apellido, $segundo_apellido, $dni, $imagen_url1, $imagen_url2, $banco, $ss, $telefono, $email, $imagen_url3, $observaciones, $imagen_url4);
         $stmt->execute();
         $id_insertado = $stmt->insert_id;
-        if ($stmt->affected_rows) {
+        if ($stmt->execute()) {
             $respuesta = array(
                 'respuesta' => 'exitoso',
                 'id_insertado' => $id_insertado,

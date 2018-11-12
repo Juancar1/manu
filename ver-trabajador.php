@@ -193,6 +193,10 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                               $fiesta_id = $asignaciones['fiesta_id'];
                                               setlocale(LC_ALL,"es_ES");
                                               $fecha_email =  strftime("%A, %d %B %G", strtotime($asignaciones['ultimo_email_asignaciones']));
+                                              if($fecha_email === 0){
+                                                $fecha_email =  "No se ha enviado ningún email";
+                                              } else {
+                                                $fecha_email = $fecha_email;}
                                             
                                               if(($asignaciones['email_env']) == 0) {
                                                   $email_env = "No"; 
@@ -224,7 +228,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                                             <a href="mail-asignaciones.php?id=<?php echo $id_trabajador ?>"><i class="fa fa-download"></i> Enviar email</a>
                                             </button>
 
-                                            <div>Ulimo email enviado "Fiestas"<br><small><?php echo $fecha_email; ?></small></div>
+                                            <div>Ulimo email enviado <br><small><?php echo $fecha_email; ?></small></div>
 
                                     <?php } ?>
 

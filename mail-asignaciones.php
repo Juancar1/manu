@@ -98,7 +98,11 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                         <br>
 
                         <?php setlocale(LC_ALL,"es_ES"); 
-                        $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($asignaciones['ultimo_email_asignaciones']));?>
+                        $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($asignaciones['ultimo_email_asignaciones']));
+                        if($fecha_formateada == 0){
+                          $fecha_formateada = "No se ha mandado ningún email";
+                        } else {
+                          $fecha_formateada = $fecha_formateada;}?>
                  <?php } ?>
 
                       <p>Si hay algún error, puedes contestar a este email detallando que dato hay que corregir o actualizar a la mayor brevedad posible</p>

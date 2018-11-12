@@ -37,6 +37,9 @@ $('#enviar-email-ficha').on('click', function (e) {
               'El email se ha enviado correctamente',
               'success'
             )
+            setTimeout(function () {
+              window.location.href = "ver-trabajador.php?id=" + id_trabajador 
+            }, 2000)
           }
         } else {
           swal(
@@ -87,6 +90,9 @@ $('#enviar-email-asignaciones').on('click', function (e) {
               'El email se ha enviado correctamente',
               'success'
             )
+            setTimeout(function () {
+              window.location.href = "ver-trabajador.php?id=" + id_trabajador 
+            }, 2000)
           }
         } else {
           swal(

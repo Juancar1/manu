@@ -35,7 +35,7 @@ $(document).ready(function(){
               } else {
                   swal(
                       'Error!',
-                      'Hubo un error',
+                      'Revisa el DNI, tiene que ser único por cada trabajador',
                       'error'
                   )
               }

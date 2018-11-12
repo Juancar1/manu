@@ -42,7 +42,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
                 echo $error;
               }
               while ($trabajador = $resultado->fetch_assoc()) { ?>
-               <?php 
+               <?php       
                             $banco = $trabajador['banco'];
                             function hiddenString($str, $start = 1, $end = 1){
                             $len = strlen($str);
@@ -97,8 +97,14 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
               <a href="ver-trabajador.php?id=<?php echo $id_trabajador ?>" class="btn btn-default"><i class="far fa-arrow-alt-circle-left"></i> Atrás</a>
               </div>
             </div>
-                    <?php setlocale(LC_ALL,"es_ES"); 
-                    $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($trabajador['ultimo_email_ficha']));?>
+                    <?php 
+                    setlocale(LC_ALL,"es_ES"); 
+                    $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($trabajador['ultimo_email_ficha']));
+                    if($fecha_formateada === 0){
+                      $fecha_formateada =  "No se ha enviado ningún email";
+                    } else {
+                      $fecha_formateada = $fecha_formateada;}?>
+
             <div class="ultimo-email"><strong>Último email enviado: </strong><?php echo $fecha_formateada; ?></div>
         <?php } ?>
       </div>
