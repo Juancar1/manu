@@ -3,7 +3,7 @@
 if (isset($_POST['password']) == 'modificar') {
   
     
-    $password = htmlspecialchars($_POST['password2']);
+    $password = filter_var($_POST['password2'], FILTER_SANITIZE_STRING);
     $id_admin = 1;
 
     $opciones = array(

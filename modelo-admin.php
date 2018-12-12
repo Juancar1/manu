@@ -2,8 +2,8 @@
 //crea un nuevo usuario y contraseña
 if ($_POST['registro'] == 'nuevo-admin') {
    
-    $usuario = htmlspecialchars($_POST['nombre']);
-    $password = htmlspecialchars($_POST['password']);
+    $usuario = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
     $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
     $acceso_administrador = 0;
     

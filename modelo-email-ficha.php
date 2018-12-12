@@ -3,7 +3,7 @@
 
 $textarea = $_POST['textarea'];
 $id_trabajador = filter_var($_POST['id_trabajador'], FILTER_VALIDATE_INT);
-$email = htmlspecialchars($_POST['email']);
+$email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 
 
                 $cabeceras = 'MIME-Version: 1.0' . "\r\n";

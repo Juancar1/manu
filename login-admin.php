@@ -4,8 +4,8 @@
 //verifica el usuario y contraseña
 if (isset($_POST['login-admin'])) {
    
-    $usuario = htmlspecialchars($_POST['usuario']);
-    $password = htmlspecialchars($_POST['password']);
+    $usuario = filter_var($_POST['usuario'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
   
 
     try {

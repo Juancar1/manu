@@ -41,7 +41,7 @@ try {
  if($_POST['archivado'] == 3) {
 
     
-        $observaciones = htmlspecialchars($_POST['observaciones']);
+        $observaciones = filter_var($_POST['observaciones'], FILTER_SANITIZE_STRING);
         $id_fiesta = filter_var($_POST['id_fiesta'], FILTER_VALIDATE_INT);
         $archivado = 3;
 

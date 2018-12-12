@@ -2,9 +2,9 @@
 
 if ($_POST['registro'] == 'nuevo') {
 
-    $texto = htmlspecialchars($_POST['texto']);
+    $texto = filter_var($_POST['texto'], FILTER_SANITIZE_STRING);
     $texto = ucfirst(strtolower($texto));
-    $fecha= htmlspecialchars(date("Y-m-d H:i:s"));
+    $fecha= (date("Y-m-d H:i:s"));
     
     try {
 

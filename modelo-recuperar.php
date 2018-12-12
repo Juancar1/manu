@@ -1,7 +1,7 @@
 <?php
 include_once 'templates/header.php';
 include_once 'funciones/conexion.php';
-$usuario = htmlspecialchars($_POST['usuario']);
+$usuario = filter_var($_POST['usuario'], FILTER_SANITIZE_STRING);
 $id_admin = 1;?>
 
 

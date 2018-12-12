@@ -5,7 +5,7 @@
 if ($_POST['registro'] == 'nuevo') {
 
 
-    $nombre_fiesta = htmlspecialchars($_POST['nombre_puesto']);
+    $nombre_fiesta = filter_var($_POST['nombre_puesto'], FILTER_SANITIZE_STRING);
     $nombre_fiesta = ucfirst(strtolower($nombre_fiesta));
 
     try {
