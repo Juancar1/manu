@@ -7,12 +7,6 @@ include_once 'templates/navegacion.php';
 if(($_SESSION['acceso_administrador']) == 1):?>
 
 
-
-
-
-  <!-- =============================================== -->
-
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">

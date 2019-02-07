@@ -2,6 +2,7 @@
 
       include_once 'funciones/sesiones.php';
       include_once 'funciones/conexion.php';
+      include_once 'funciones/consultas.php';
       include_once 'templates/header.php';
       include_once 'templates/barra.php';
       include_once 'templates/navegacion.php';
@@ -13,29 +14,21 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Crear una nota
-        <small></small>
-      </h1>
-      
-    </section>
 
     <div class="row">
       <div class="col-md-12">
 
     <!-- Main content -->
-    <section class="content">
+    <section>
 
-            <div class="box">
+            <div class="box collapsed-box">
             <div class="box-header">
               <h3 class="box-title">Notas
                 <small></small>
               </h3>
               <div class="pull-right box-tools">
-                <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
-                        title="Collapse">
-                  <i class="fa fa-minus"></i></button>
+                <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fa fa-plus"></i></button>
               </div>
               <!-- /. tools -->
             </div>
@@ -57,62 +50,38 @@
             </form>
 
              <section class="content">
+
+
       <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header titulo_h3">
-              <h3 class="box-title">Aquí tienes todas las notas registradas</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-
-              <table id="registros" class="table table-bordered table-striped">
-                <thead>
-                <tr class="tabla_header">
-                  <th class="centrar_usuario">Nota</th>
-                  <th class="centrar_fecha">Fecha</th>
-                  <th class="centrar_acciones">Eliminar</th>
-                </tr>
-                </thead>
-               <tbody>
-
-                  <?php
-
-                  try {
-                    $sql = "SELECT id_notas, text, editado FROM notas";
-                    $resultado = $conn->query($sql);
-                  }catch (Exception $e){
-                    $error = $e->getMessage();
-                    echo $error;
-                  }
-                  while($notas = $resultado->fetch_assoc()){ 
-                    setlocale(LC_ALL,"es_ES");
-                    $fecha_formateada =  strftime("%A, %d %B %G", strtotime($notas['editado']));?>
-                    <tr class="centrar_tabla">
-                      <td><?php echo $notas['text']; ?></td>
-                      <td><?php echo $fecha_formateada; ?></td>
-                      <td class="centrar_iconos">
-                        <a href="#" data-id="<?php echo $notas['id_notas']; ?>" data-tipo="nota" class="btn bg-maroon bnt-flat margin borrar_registro">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                      </td>
-                    </tr>
-               <?php }; ?>
-               </tbody> 
-              </table>
-            </div>
+          <div class="col-md-12">
+                       <?php $resultado = notas();
+                         while($notas = $resultado->fetch_assoc()){ ?>
+                    <div class="box">
+                     <div class="post" id="<?php echo $notas['id_notas']; ?>">
+                      <div class="user-block">
+                         <span class="username">
+                       <?php   setlocale(LC_ALL,"es_ES");
+                          $fecha_formateada =  strftime("%A, %d %B %G", strtotime($notas['editado']));?>
+                          <a href="#"></a>
+                          <a href="#" data-id="<?php echo $notas['id_notas']; ?>" data-tipo="nota" class="pull-right btn-box-tool borrar_registro"><i class="fa fa-times"></i></a>
+                        </span>
+                    <span class="description text-center"><?php echo $fecha_formateada; ?></span>
+                  </div>
+                  <!-- /.user-block -->
+                  <p class="nota-texto">
+                  <?php echo $notas['text']; ?>
+                  </p>
+                
+                <?php } ?>
+              </div>
             <!-- /.box-body -->
-          </div>
+           </div>
           <!-- /.box -->
-        </div>
+          </div>
         <!-- /.col -->
-      </div>
+       </div>
       <!-- /.row -->
-    </section>
-
-
-       </section>
-    <!-- /.content -->
+     </section>
       </div><!-- bootstrap md-8 -->
     </div><!-- bootstrap box -->
   </div>

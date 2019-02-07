@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 
+
   $('#guardar-registro').on('submit', function (e) {
     e.preventDefault();
 
@@ -74,6 +75,7 @@ $(document).ready(function () {
                 'success'
               )
               jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
+              jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('.post [id="' + resultado.id_eliminado + '"]').remove();
             }
           } else {
             swal(

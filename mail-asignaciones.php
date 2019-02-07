@@ -10,22 +10,12 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
       include_once 'templates/barra.php';
       include_once 'templates/navegacion.php';
       if(($_SESSION['acceso_administrador']) == 1):?>
-?>
-
 
 
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-       Servicio de mail
-        <small>Vas fiestas asignadas a este trabajador</small>
-      </h1>
-     
-    </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="">
 
       <!-- Default box -->
       <div class="box box primary">
@@ -99,7 +89,7 @@ if (!filter_var($id_trabajador, FILTER_VALIDATE_INT)) {
 
                         <?php setlocale(LC_ALL,"es_ES"); 
                         $fecha_formateada =  strftime("%A, %d %B %G %H:%M", strtotime($asignaciones['ultimo_email_asignaciones']));
-                        if($fecha_formateada == 0){
+                        if($fecha_formateada == " "){
                           $fecha_formateada = "No se ha mandado ningún email";
                         } else {
                           $fecha_formateada = $fecha_formateada;}?>

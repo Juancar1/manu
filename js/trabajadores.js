@@ -1,9 +1,16 @@
 $(document).ready(function(){
 
 
+  // Aviso de perfil completo o incompleto
+  var datos_pendiente = $('#datos_pendiente').val();
+  if(datos_pendiente == ""){
+    $("#mensaje_usuario").append("<span>").addClass("label label-success").html("Perfil Completo");
+  } else {
+    $("#mensaje_usuario").append("<span>").addClass("label label-danger").html("Perfil Incompleto");
+  }
+    
+
 // se ejecuta cuando hay un archivo
-
-
     $('#guardar-registro-archivo').on('submit', function(e){
         e.preventDefault();
 

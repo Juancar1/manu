@@ -10,21 +10,15 @@ include_once 'templates/header.php';
 include_once 'templates/barra.php';
 include_once 'templates/navegacion.php';
 if(($_SESSION['acceso_administrador']) == 1):?>
-?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Elimina trabajadores de esta fiesta
-        <small></small>
-      </h1>
-    </section>
+
     <form role="form" method="post" name="guardar-registro" id="guardar-registro" action="modelo-evento.php">
      
     <!-- Main content -->
-    <section class="content">
+    <section class="">
       <!-- Default box -->
       <div class="box">
       <!-- centro -->

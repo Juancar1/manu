@@ -5,7 +5,7 @@
           include_once 'templates/barra.php';
           include_once 'templates/navegacion.php';
           if(($_SESSION['acceso_administrador']) == 1):?>
-?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -19,13 +19,10 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="">
       <div class="row">
         <div class="col-md-12">
           <div class="box">
-            <div class="box-header titulo_h3">
-              <h3 class="box-title"></h3>
-            </div>
             <!-- /.box-header -->
             <div class="box-body">
 

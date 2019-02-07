@@ -8,26 +8,15 @@ if(($_SESSION['acceso_administrador']) == 1):?>
 
 
 
-
-
-  <!-- =============================================== -->
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Crear un puesto
-        <small></small>
-      </h1>
-      
-    </section>
+
 
     <div class="row">
       <div class="col-md-8">
 
     <!-- Main content -->
-    <section class="content">
+    <section class="">
 
       <!-- Default box -->
       <div class="box">

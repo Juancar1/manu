@@ -163,6 +163,10 @@ textarea {
 .hora-fichado{
     text-align:center;
 }
+.foto{
+    display: block;
+    margin: auto;
+}
 /* mail */
 .ultimo-email,
 .ultimo-email-asignaciones{
@@ -397,6 +401,16 @@ table > tbody > tr > td.segundo_rango{
 #main-footer{
     margin-left: 0%;
     text-align: center;
+}
+/* Notas */
+.description{
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.nota-texto{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 

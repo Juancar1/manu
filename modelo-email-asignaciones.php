@@ -17,8 +17,8 @@ $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 
             try {
                  include_once 'funciones/conexion.php';
-                 $stmt = $conn->prepare("UPDATE trabajadores, asignaciones SET ultimo_email_asignaciones = NOW(), email_env = 1 WHERE trabajador_id = ? ");
-                 $stmt->bind_param("i", $id_trabajador);
+                 $stmt = $conn->prepare("UPDATE trabajadores, asignaciones SET ultimo_email_asignaciones = NOW(), email_env = 1 WHERE id_trabajador = ? and trabajador_id = ? ");
+                 $stmt->bind_param("ii", $id_trabajador, $id_trabajador);
 
                 $estado = $stmt->execute();
 

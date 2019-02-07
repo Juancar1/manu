@@ -9,10 +9,9 @@ $id_fiesta = $_GET['id'];
         include_once 'templates/barra.php';
         include_once 'templates/navegacion.php';
         if(($_SESSION['acceso_administrador']) == 1):?>
-?>
 
-<div id="content">
-                    <div class="content-wrapper">
+      <div id="content">
+         <div class="content-wrapper">
                             <!-- Main content -->
           <section class="invoice">
               <div class="row">

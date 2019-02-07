@@ -79,6 +79,7 @@ if ($_POST['registro_trabajador'] == 'nuevo') {
             'respuesta' => error_get_last()
        );
    }
+
    // dni cara B
    if(move_uploaded_file($_FILES['archivo_imagen2']['tmp_name'], $directorio . $dni . "_2.jpg")){
         $imagen_url2 = $dni . "_2.jpg";

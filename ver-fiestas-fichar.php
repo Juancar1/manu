@@ -10,15 +10,13 @@ $id_fiesta = $_GET['id'];
         if(($_SESSION['acceso_administrador']) == 1):?>
 
 
-<div id="content">
-                    <div class="content-wrapper">
-                            <!-- Main content -->
+      <div id="content">
+      <div class="content-wrapper">
+       <!-- Main content -->
           <section class="invoice">
               <div class="row">
                  <div class="col-xs-12">
-   <?php
-
-
+                <?php
 
                 try {
                 $sql = " SELECT id_fiesta, nombre_evento, nombre_sala, fecha, hora_inicio from fiestas ";

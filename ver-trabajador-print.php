@@ -8,7 +8,7 @@ $id_trabajador = $_GET['id'];
         include_once 'templates/barra.php';
         include_once 'templates/navegacion.php';
         if(($_SESSION['acceso_administrador']) == 1):?>
-?>
+
 
   <body onload="window.print();">
        <div class="content-wrapper">

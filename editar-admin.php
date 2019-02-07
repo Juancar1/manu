@@ -5,7 +5,7 @@ include_once 'templates/header.php';
 include_once 'templates/barra.php';
 include_once 'templates/navegacion.php';
 if(($_SESSION['acceso_administrador']) == 1):?>
-?>
+
 
 
 
@@ -13,20 +13,12 @@ if(($_SESSION['acceso_administrador']) == 1):?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Cambiar contraseña
-        <small></small>
-      </h1>
-      
-    </section>
 
     <div class="row">
       <div class="col-md-8">
 
     <!-- Main content -->
-    <section class="content">
+    <section class="">
 
       <!-- Default box -->
       <div class="box">
